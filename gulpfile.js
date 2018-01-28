@@ -1,49 +1,90 @@
-// ---------------------------------------------------------------
-// Include Plugins
-// ---------------------------------------------------------------
-var gulp = require('gulp');
+let babelify = require('babelify');
+let browserify = require('browserify')
+let buffer = require('vinyl-buffer');
+let concat = require('gulp-concat');
+let del = require('del');
+let gulp = require('gulp');
+let imagemin = require('gulp-imagemin');
+let gulpif = require('gulp-if');
+let minifyCSS = require('gulp-csso');
+let pug = require('gulp-pug');
+let sass = require('gulp-sass');
+let source = require('vinyl-source-stream');
+let sourcemaps = require('gulp-sourcemaps');
+let sync = require('browser-sync').create();
+let uglify = require('gulp-uglify');
 
-// Pour le sass / css
-var sass = require('gulp-sass');
-
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-
-var notify = require('gulp-notify');
-
-
-// ---------------------------------------------------------------
-// Configuration
-// ---------------------------------------------------------------
-var path = {
-	sass: 'scss/**/*.scss',
-	css: 'css/',
-	js: 'js/**/*.js'
-};
-
-var autoprefixerOptions = {
-	browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie >= 9']
-};
+let isProd = process.env.NODE_ENV === 'production';
 
 
-// Watch task
-gulp.task('watch', ['sass'], function() {
-	gulp.watch(path.sass, ['sass']);
-});
+/**
+ * SCSS
+ */
+function scss() {
+    return gulp.src('app/scss/styles.scss')
+        .pipe(gulpif(!isProd, sourcemaps.init()))
+        .pipe(sass())
+        .pipe(gulpif(isProd, minifyCSS()))
+        .pipe(gulpif(!isProd, sourcemaps.write('.')))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(sync.stream());
+}
 
-// + cache modified files
-// + size the final css filereload on change
-// + refresh stream
-gulp.task('sass', function() {
-	return gulp
-		.src(path.sass)
-		.pipe(sass())
-		.pipe(autoprefixer(autoprefixerOptions))
-		.pipe(cleanCSS({ debug: true }))
-		.pipe(gulp.dest(path.css))
-        .pipe(notify({ message: 'SASS recompilé'}));
-});
+/**
+ * JS
+ */
+// TODO: GULP PATH FOR JS
+function js() {
+    return browserify({entries: ['app/js'], debug: true})
+        .transform(babelify, {presets: 'es2015'})
+        .bundle()
+        .pipe(source('script.js'))
+        .pipe(buffer())
+        .pipe(gulpif(!isProd, sourcemaps.init({loadMaps: true})))
+        .pipe(uglify())
+        .pipe(gulpif(!isProd, sourcemaps.write('.')))
+        .pipe(gulp.dest('app/js'))
+        .pipe(sync.stream());
+}
 
+/**
+ * IMAGES
+ */
 
-gulp.task('default', ['watch'], function() {});
+function images() {
+    return gulp.src('app/img_content/**/*')
+        .pipe(gulpif(isProd, imagemin({verbose: true})))
+        .pipe(gulp.dest('dist/img'));
+}
 
+/**
+ * FONTS
+ */
+function fonts() {
+    return gulp.src('app/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts'));
+}
+
+/**
+ * GLOBAL
+ */
+function clean() {
+    return del(['dist']);
+}
+
+// TODO: ADD GULP JS TO PARALLEL
+gulp.task('build', gulp.series(clean, gulp.parallel(scss, images, fonts )));
+
+gulp.task('default', gulp.parallel(scss, images, fonts, function(done) {
+    sync.init({
+        server: {
+            baseDir: './dist'
+        }
+    });
+
+    gulp.watch('app/**/*.scss', scss);
+   // gulp.watch('src/**/*.js', js);
+
+    done();
+
+}));
