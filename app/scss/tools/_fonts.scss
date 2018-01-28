@@ -1,0 +1,111 @@
+/* Url des fonts à rajouter dans ce fichier */
+
+@font-face {
+  font-family: "Barlow Condensed Black";
+  src: url("../fonts/BarlowCondensed-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed BlackItalic";
+  src: url('../fonts/BarlowCondensed-BlackItalic.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed Bold";
+  src: url("../fonts/BarlowCondensed-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed BoldItalic";
+  src: url("../fonts/BarlowCondensed-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed ExtraBold";
+  src: url("../fonts/BarlowCondensed-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed ExtraBoldItalic";
+  src: url("../fonts/BarlowCondensed-ExtraBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed ExtraLight";
+  src: url("../fonts/BarlowCondensed-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed ExtraLightItalic";
+  src: url("../fonts/BarlowCondensed-ExtraLightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed Italic";
+  src: url("../fonts/BarlowCondensed-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed Light";
+  src: url("../fonts/BarlowCondensed-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed LightItalic";
+  src: url("../fonts/BarlowCondensed-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed Medium";
+  src: url("../fonts/BarlowCondensed-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed MediumItalic";
+  src: url("../fonts/BarlowCondensed-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed Regular";
+  src: url("../fonts/BarlowCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed SemiBold";
+  src: url("../fonts/BarlowCondensed-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed SemiBoldItalic";
+  src: url("../fonts/BarlowCondensed-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed Thin";
+  src: url("../fonts/BarlowCondensed-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Barlow Condensed ThinItalic";
+  src: url("../fonts/BarlowCondensed-ThinItalic.ttf") format("truetype");
+}
+
+$fontblack:           "Barlow Condensed Black";
+$fontblackitalic:     "Barlow Condensed BlackItalic";
+$fontbold:            "Barlow Condensed Bold";
+$fontbolditalic:      "Barlow Condensed BoldItalic";
+$fontextrabold:       "Barlow Condensed ExtraBold";
+$fontextrabolditalic: "Barlow Condensed ExtraBoldItalic";
+$fontextralight:      "Barlow Condensed ExtraLight";
+$fontextralightitalic:"Barlow Condensed ExtraLightItalic";
+$fontitalic:          "Barlow Condensed Italic";
+$fontlight:           "Barlow Condensed Light";
+$fontlightitalic:     "Barlow Condensed LightItalic";
+$fontmedium:          "Barlow Condensed Medium";
+$fontmediumitalic:    "Barlow Condensed MediumItalic";
+$fontregular:         "Barlow Condensed Regular";
+$fontsemibold:        "Barlow Condensed SemiBold";
+$fontsemibolditalic:  "Barlow Condensed SemiBoldItalic";
+$fontthin:            "Barlow Condensed Thin";
+$fontthinitalic:      "Barlow Condensed ThinItalic";
+
