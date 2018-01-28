@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69506bee-846d-4ce5-b903-d6f48334bdf2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/scss/style.scss" afterPath="$PROJECT_DIR$/scss/style.scss" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -199,7 +198,7 @@
       <option name="presentableId" value="Default" />
       <updated>1516373449023</updated>
       <workItem from="1516373452071" duration="929000" />
-      <workItem from="1517134673410" duration="2681000" />
+      <workItem from="1517134673410" duration="2721000" />
     </task>
     <task id="LOCAL-00001" summary="Initialisation du projet">
       <created>1516373627653</created>
@@ -212,7 +211,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3610000" />
+    <option name="totallyTimeSpent" value="3650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
