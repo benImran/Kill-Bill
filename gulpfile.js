@@ -18,7 +18,7 @@ var notify = require('gulp-notify');
 var path = {
 	sass: 'scss/**/*.scss',
 	css: 'css/',
-	js: 'js/**/*.js',
+	js: 'js/**/*.js'
 };
 
 var autoprefixerOptions = {
@@ -46,3 +46,4 @@ gulp.task('sass', function() {
 
 
 gulp.task('default', ['watch'], function() {});
+
