@@ -28,7 +28,7 @@ img {
 
     .form-container {
         position: absolute;
-        top: -40%;
+        top: -45%;
         left: 0;
         width: auto;
         z-index: -1;
@@ -225,4 +225,14 @@ img {
             text-align: left;
         }
     }
+}
+
+
+//tracklist
+.tracklist {
+    background-color: #0C101C;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+    height: auto;
+    position: relative;
 }
