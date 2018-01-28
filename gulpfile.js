@@ -21,7 +21,7 @@ let isProd = process.env.NODE_ENV === 'production';
  * SCSS
  */
 function scss() {
-    return gulp.src('app/scss/styles.scss')
+    return gulp.src('app/scss/style.scss')
         .pipe(gulpif(!isProd, sourcemaps.init()))
         .pipe(sass())
         .pipe(gulpif(isProd, minifyCSS()))
@@ -78,7 +78,7 @@ gulp.task('build', gulp.series(clean, gulp.parallel(scss, images, fonts )));
 gulp.task('default', gulp.parallel(scss, images, fonts, function(done) {
     sync.init({
         server: {
-            baseDir: './dist'
+            baseDir: './'
         }
     });
 

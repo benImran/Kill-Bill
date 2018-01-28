@@ -19,11 +19,15 @@ img {
 
     @include breakpoint(mobile){
       top: 10%;
+      z-index: 99;
     }
   }
-
+  .title-container {
+    z-index: 999;
+  }
   .title {
-    font-weight: 800;
+    //font-weight: 800;
+    font-family: $fontextrabold;
     color: $yellow-style;
     text-transform: uppercase;
     text-align: center;
@@ -52,6 +56,7 @@ img {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 999;
 
     &::after {
       content: '';
@@ -81,9 +86,10 @@ img {
 
   h2 {
     color: $white;
-    font-weight: 800;
+    //font-weight: 800;
+    font-family: $fontextrabolditalic;
     font-size: 33px;
-    font-style: italic;
+    //font-style: italic;
     line-height: 48px;
     margin-bottom: 10px;
   }
@@ -101,15 +107,14 @@ img {
       display: block;
       color: $white;
       font-size: 72px;
-      font-weight: 600;
-
+      font-family: $fontsemibold;
     }
 
     .grey-number {
       font-size: 16px;
       opacity: 0.6;
+      font-family: $fontregular;
       font-style: italic;
-      font-weight: 400;
       position: relative;
       margin-top: 54px;
 
@@ -136,7 +141,7 @@ img {
   .text-track {
     h3 {
       color: $yellow-style;
-      font-weight: 600;
+      font-family: $fontsemibold;
       text-transform: uppercase;
       margin-top: 173px;
       position: relative;
@@ -159,10 +164,9 @@ img {
       line-height: 32px;
       color: $white;
       font-size: 22px;
-      font-weight: 500;
+      font-family: $fontmedium;
     }
   }
-
 }
 
 .next-track {
@@ -170,6 +174,10 @@ img {
   // width: 375px;
   background-color: $yellow-st;
   padding: 35px 32px;
+  //min-height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .content-left {
     text-align: left;
@@ -177,14 +185,13 @@ img {
 
     h4 {
       font-size: 24px;
-      font-weight: 900;
-      font-style: italic;
+      font-family: $fontblackitalic;
       padding-bottom: 5px;
     }
 
     p {
       font-size: 19px;
-      font-weight: 400;
+      font-family: $fontregular;
       color: $red-st;
     }
   }
@@ -195,7 +202,7 @@ img {
     p {
       display: block;
       font-size: 36px;
-      font-weight: 600;
+      font-family: $fontsemibold;
       text-align: left;
     }
 
@@ -210,16 +217,10 @@ img {
 //tracklist
 .tracklist-page {
   background-color: $dark-blue;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: $Barlow-cond;
   text-align: center;
   height: auto;
   position: relative;
-
-  .burger-menu {
-    position: absolute;
-    right: 20px;
-    top: 25px;
-  }
 
   .tracklist {
     padding: 85px 40px 85px;
@@ -250,18 +251,17 @@ img {
     .track-name {
       color: $white;
       font-size: 26px;
-      font-style: italic;
       line-height: 38px;
       margin-bottom: 7px;
       margin-top: 8px;
-      font-weight: 800;
+      font-family: $fontextrabolditalic;
     }
 
     .track-artist {
       font-size: 18px;
       display: inline;
       text-align: left;
-      font-weight: 500;
+      font-family: $fontmedium;
 
     }
 
@@ -271,7 +271,7 @@ img {
       position: absolute;
       right: 0;
       bottom: 0;
-      font-weight: 600;
+      font-family: $fontsemibold;
     }
   }
 

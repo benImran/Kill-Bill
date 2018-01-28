@@ -12,20 +12,17 @@
 
     <!--build:css css/style.css-->
     <link rel="stylesheet" href="dist/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,400i,600,500,800,800i,900i">
     <!--endbuild-->
 </head>
-
-<body class="homepage">
-<main>
+<body>
+<main class="homepage">
     <header>
-        <div class="burger-menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="13" viewBox="0 0 26 13">
-                <g fill="#FFC100" fill-rule="evenodd">
-                    <rect width="26" height="3"/>
-                    <rect width="26" height="3" y="10"/>
-                </g>
-            </svg>
+        <div class="burger-menu"></div>
+        <div class="container">
+            <input id="click" name="exit" type="checkbox"/>
+            <label for="click">
+                <span class="burger"></span>
+            </label>
         </div>
     </header>
     <div class="homepage-container">
@@ -34,8 +31,8 @@
                 <path fill="#FFC100" fill-rule="evenodd" d="M2507,1240.58863 L2507,1520.90235 L586,2239 L586,1240.58863 L586,796.097654 L2507,78 L2507,1240.58863 Z" transform="translate(-586 -78)"/>
             </svg>
         </div>
-        <div>
-            <h1 class="title">kill bill</h1>
+        <div class="title-container">
+            <h1 class="title">kill</h1>
             <div class="vinyl-anim">
                 <img src="https://dummyimage.com/245x245/4b5dc2/7e84e0" alt="">
             </div>
@@ -83,6 +80,5 @@
         </div>
     </div>
 </main>
-
 </body>
 </html>
