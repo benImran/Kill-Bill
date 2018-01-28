@@ -1,0 +1,7 @@
+/* Mettre les @media dans ce fichier */
+
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media (min-width: 800px) { @content ; }
+  }
+}
