@@ -148,8 +148,7 @@ img {
     z-index: -1; }
     @media (min-width: 800px) {
       .homepage .form-container {
-        top: 10%;
-        z-index: 99; } }
+        top: 10%; } }
   .homepage .title-container {
     z-index: 999; }
   .homepage .title {
