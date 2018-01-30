@@ -128,7 +128,8 @@ a {
 .burger-menu {
   position: absolute;
   right: 20px;
-  top: 25px; }
+  top: 25px;
+  z-index: 4; }
 
 img {
   max-width: 100%;
@@ -160,6 +161,7 @@ img {
   .homepage .title--black {
     color: #000000; }
   .homepage .homepage-container {
+    position: relative;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -167,7 +169,7 @@ img {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    position: relative; }
+    z-index: 2; }
   .homepage .container-bottom {
     color: #0C101C;
     position: absolute;
@@ -331,5 +333,21 @@ img {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center; }
+
+.burger {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFC100;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center; }
 
 /*# sourceMappingURL=style.css.map */
