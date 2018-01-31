@@ -36,10 +36,13 @@ img {
   .title {
     //font-weight: 800;
     font-family: $fontextrabold;
-    color: $yellow-style;
     text-transform: uppercase;
     text-align: center;
     font-size: 72px;
+  }
+
+  .title--yellow {
+    color: $yellow-style;
   }
 
   .title--black {
@@ -114,23 +117,23 @@ img {
     margin-bottom: 10px;
   }
 
-  .title-red {
+  .title-song--red {
     color: $red-style;
     font-size: 27px;
   }
 
-  .number-track {
+  .js-container-number {
     text-align: center;
     margin-top: 73px;
 
-    p {
+    .js-container-number__first {
       display: block;
       color: $white;
       font-size: 72px;
       font-family: $fontsemibold;
     }
 
-    .grey-number {
+    .container-number__grey {
       font-size: 16px;
       opacity: 0.6;
       font-family: $fontregular;
@@ -158,8 +161,8 @@ img {
     margin: 80px auto 0;
   }
 
-  .text-track {
-    h3 {
+  .content-track {
+    .content-track__title {
       color: $yellow-style;
       font-family: $fontsemibold;
       text-transform: uppercase;
@@ -179,7 +182,7 @@ img {
       }
     }
 
-    p {
+    .js-content-track__about {
       margin-top: 24px;
       line-height: 32px;
       color: $white;
@@ -189,15 +192,85 @@ img {
   }
 }
 
-.next-track {
+//BLOCS CHANSONS PRECEDENTE & SUIVANTE PRÉSENTS TRACK ET INDEX
+.choose-tracks {
+  width: 100%;
+
+  @include breakpoint(ipad-large) {
+    .choose-tracks__last__track {
+      display: none;
+    }
+
+    .choose-tracks__next__track {
+      width: 100%;
+    }
+  }
+}
+
+
+//bloc seulement sur desktop pour aller à la chanson précédente
+.choose-tracks__last__track {
+  width: 50%;
+  float: left;
+  padding: 35px 32px;
+  //min-height: 18vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $black-style;
+
+  .content-left {
+    text-align: left;
+    float: left;
+
+    .js-content-left__next-title {
+      font-size: 24px;
+      font-family: $fontblackitalic;
+      padding-bottom: 5px;
+      color: $white;
+    }
+
+    .js-content-left_next-artist {
+      font-size: 19px;
+      font-family: $fontregular;
+      color: $red-st;
+    }
+  }
+
+  .content-right {
+    float: right;
+
+    .js-content-right__next-song-number {
+      display: block;
+      font-size: 36px;
+      font-family: $fontsemibold;
+      text-align: left;
+    }
+
+    .arrow {
+      display: block;
+      text-align: left;
+    }
+
+    .number--yellow {
+      color: $yellow-style;
+    }
+  }
+}
+
+
+//bloc présent sur desk et mobile, width à 100% sur mobile
+.choose-tracks__next__track {
   // height: 123px;
   // width: 375px;
+  width: 50%;
   background-color: $yellow-st;
   padding: 35px 32px;
   //min-height: 18vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  float: right;
 
   .content-left {
     text-align: left;
@@ -302,10 +375,6 @@ img {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-
-    .arrow-image {
-
-    }
   }
 }
 

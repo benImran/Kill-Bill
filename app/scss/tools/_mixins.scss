@@ -29,6 +29,7 @@
   //   @media (min-width: 1200px) { @content ; }
   // }
 
+
   @if $point == iphone-5 {
     @media (min-width: 320px) { @content ; } 
 
@@ -42,6 +43,10 @@
   @if $point == ipad {
     @media (min-width: 768px) and (max-width : 1024px) { @content ; } 
   
+  }
+
+  @if $point == ipad-large {
+    @media (max-width: 800px) { @content ; }
   }
 
   @if $point == macbook {

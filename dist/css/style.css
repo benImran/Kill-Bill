@@ -160,10 +160,11 @@ img {
     z-index: 999; }
   .homepage .title {
     font-family: "Barlow Condensed ExtraBold";
-    color: #FFC100;
     text-transform: uppercase;
     text-align: center;
     font-size: 72px; }
+  .homepage .title--yellow {
+    color: #FFC100; }
   .homepage .title--black {
     color: #000000; }
   .homepage .homepage-container {
@@ -214,25 +215,25 @@ img {
     font-size: 33px;
     line-height: 48px;
     margin-bottom: 10px; }
-  .content-vinyl .title-red {
+  .content-vinyl .title-song--red {
     color: #FF4245;
     font-size: 27px; }
-  .content-vinyl .number-track {
+  .content-vinyl .js-container-number {
     text-align: center;
     margin-top: 73px; }
-    .content-vinyl .number-track p {
+    .content-vinyl .js-container-number .js-container-number__first {
       display: block;
       color: #FFFFFF;
       font-size: 72px;
       font-family: "Barlow Condensed SemiBold"; }
-    .content-vinyl .number-track .grey-number {
+    .content-vinyl .js-container-number .container-number__grey {
       font-size: 16px;
       opacity: 0.6;
       font-family: "Barlow Condensed Regular";
       font-style: italic;
       position: relative;
       margin-top: 54px; }
-      .content-vinyl .number-track .grey-number::before {
+      .content-vinyl .js-container-number .container-number__grey::before {
         content: '';
         height: 30px;
         border-left: 1.5px solid #FFFFFF;
@@ -246,14 +247,14 @@ img {
     background-color: #FFC100;
     display: block;
     margin: 80px auto 0; }
-  .content-vinyl .text-track h3 {
+  .content-vinyl .content-track .content-track__title {
     color: #FFC100;
     font-family: "Barlow Condensed SemiBold";
     text-transform: uppercase;
     margin-top: 173px;
     position: relative;
     padding-left: 50px; }
-    .content-vinyl .text-track h3::before {
+    .content-vinyl .content-track .content-track__title::before {
       content: '';
       width: 34px;
       height: 3px;
@@ -261,38 +262,81 @@ img {
       position: absolute;
       left: 0;
       top: 50%; }
-  .content-vinyl .text-track p {
+  .content-vinyl .content-track .js-content-track__about {
     margin-top: 24px;
     line-height: 32px;
     color: #FFFFFF;
     font-size: 22px;
     font-family: "Barlow Condensed Medium"; }
 
-.next-track {
-  background-color: #FFD600;
+.choose-tracks {
+  width: 100%; }
+  @media (max-width: 800px) {
+    .choose-tracks .choose-tracks__last__track {
+      display: none; }
+    .choose-tracks .choose-tracks__next__track {
+      width: 100%; } }
+
+.choose-tracks__last__track {
+  width: 50%;
+  float: left;
   padding: 35px 32px;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
-  .next-track .content-left {
+  justify-content: space-between;
+  background-color: #17181A; }
+  .choose-tracks__last__track .content-left {
     text-align: left;
     float: left; }
-    .next-track .content-left h4 {
+    .choose-tracks__last__track .content-left .js-content-left__next-title {
       font-size: 24px;
       font-family: "Barlow Condensed BlackItalic";
-      padding-bottom: 5px; }
-    .next-track .content-left p {
+      padding-bottom: 5px;
+      color: #FFFFFF; }
+    .choose-tracks__last__track .content-left .js-content-left_next-artist {
       font-size: 19px;
       font-family: "Barlow Condensed Regular";
       color: #E31115; }
-  .next-track .content-right {
+  .choose-tracks__last__track .content-right {
     float: right; }
-    .next-track .content-right p {
+    .choose-tracks__last__track .content-right .js-content-right__next-song-number {
       display: block;
       font-size: 36px;
       font-family: "Barlow Condensed SemiBold";
       text-align: left; }
-    .next-track .content-right .arrow {
+    .choose-tracks__last__track .content-right .arrow {
+      display: block;
+      text-align: left; }
+    .choose-tracks__last__track .content-right .number--yellow {
+      color: #FFC100; }
+
+.choose-tracks__next__track {
+  width: 50%;
+  background-color: #FFD600;
+  padding: 35px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  float: right; }
+  .choose-tracks__next__track .content-left {
+    text-align: left;
+    float: left; }
+    .choose-tracks__next__track .content-left h4 {
+      font-size: 24px;
+      font-family: "Barlow Condensed BlackItalic";
+      padding-bottom: 5px; }
+    .choose-tracks__next__track .content-left p {
+      font-size: 19px;
+      font-family: "Barlow Condensed Regular";
+      color: #E31115; }
+  .choose-tracks__next__track .content-right {
+    float: right; }
+    .choose-tracks__next__track .content-right p {
+      display: block;
+      font-size: 36px;
+      font-family: "Barlow Condensed SemiBold";
+      text-align: left; }
+    .choose-tracks__next__track .content-right .arrow {
       display: block;
       text-align: left; }
 
