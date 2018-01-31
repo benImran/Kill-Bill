@@ -347,7 +347,7 @@ img {
       background-color: $yellow-style;
     }
 
-    .track-name {
+    .track-item__name {
       color: $white;
       font-size: 26px;
       line-height: 38px;
@@ -356,7 +356,7 @@ img {
       font-family: $fontextrabolditalic;
     }
 
-    .track-artist {
+    .track-item__artist {
       font-size: 18px;
       display: inline;
       text-align: left;
@@ -364,7 +364,7 @@ img {
 
     }
 
-    .track-number {
+    .track-item__number {
       font-size: 48px;
       color: $grey-style;
       position: absolute;

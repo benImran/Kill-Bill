@@ -370,19 +370,19 @@ img {
       width: 26px;
       height: 3px;
       background-color: #FFC100; }
-    .tracklist-page .track-item .track-name {
+    .tracklist-page .track-item .track-item__name {
       color: #FFFFFF;
       font-size: 26px;
       line-height: 38px;
       margin-bottom: 7px;
       margin-top: 8px;
       font-family: "Barlow Condensed ExtraBoldItalic"; }
-    .tracklist-page .track-item .track-artist {
+    .tracklist-page .track-item .track-item__artist {
       font-size: 18px;
       display: inline;
       text-align: left;
       font-family: "Barlow Condensed Medium"; }
-    .tracklist-page .track-item .track-number {
+    .tracklist-page .track-item .track-item__number {
       font-size: 48px;
       color: #85878D;
       position: absolute;
