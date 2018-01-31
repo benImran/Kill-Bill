@@ -87,14 +87,15 @@ img {
 
   .vinyl-anim {
     position: relative;
+    margin: 25px auto;
+
     .vinyl-anim__pochette {
-      margin: 25px auto 15px;
       width: 50vw;
     }
 
     .vinyl-anim__vinyle {
       position: absolute;
-      top: 10%;
+      top: 0;
       left: 30%;
       z-index: -1;
     }

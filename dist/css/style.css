@@ -195,13 +195,13 @@ img {
     .homepage .container-bottom p {
       line-height: 40px; }
   .homepage .vinyl-anim {
-    position: relative; }
+    position: relative;
+    margin: 25px auto; }
     .homepage .vinyl-anim .vinyl-anim__pochette {
-      margin: 25px auto 15px;
       width: 50vw; }
     .homepage .vinyl-anim .vinyl-anim__vinyle {
       position: absolute;
-      top: 10%;
+      top: 0;
       left: 30%;
       z-index: -1; }
 
