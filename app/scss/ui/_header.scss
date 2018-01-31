@@ -9,7 +9,7 @@
 
 .container {
   position: absolute;
-  top: 5%;
+  top: 4%;
   right: 0;
   z-index: 999;
   margin: -20px 0 0 -65px;
@@ -93,7 +93,7 @@
     }
 
     .burger:before {
-      content: '';
+      //content: '';
       position: absolute;
       top: 6px;
       width: 40px;

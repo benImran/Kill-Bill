@@ -133,7 +133,7 @@ a {
 
 .container {
   position: absolute;
-  top: 5%;
+  top: 4%;
   right: 0;
   z-index: 999;
   margin: -20px 0 0 -65px;
@@ -195,7 +195,6 @@ a {
       background: #FFC100;
       animation: animationTwoReverse 1s ease forwards; }
     .container label .burger:before {
-      content: '';
       position: absolute;
       top: 6px;
       width: 40px;
