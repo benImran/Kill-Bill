@@ -88,9 +88,10 @@ img {
   .vinyl-anim {
     position: relative;
     margin: 25px auto;
+    max-width: 363px;
 
     .vinyl-anim__pochette {
-      width: 50vw;
+      width: auto;
     }
 
     .vinyl-anim__vinyle {
@@ -98,6 +99,7 @@ img {
       top: 0;
       left: 30%;
       z-index: -1;
+      max-width: 363
     }
     
   }

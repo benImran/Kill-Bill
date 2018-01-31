@@ -196,14 +196,16 @@ img {
       line-height: 40px; }
   .homepage .vinyl-anim {
     position: relative;
-    margin: 25px auto; }
+    margin: 25px auto;
+    max-width: 363px; }
     .homepage .vinyl-anim .vinyl-anim__pochette {
-      width: 50vw; }
+      width: auto; }
     .homepage .vinyl-anim .vinyl-anim__vinyle {
       position: absolute;
       top: 0;
       left: 30%;
-      z-index: -1; }
+      z-index: -1;
+      max-width: 363; }
 
 .content-vinyl {
   display: block;
