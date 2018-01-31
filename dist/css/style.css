@@ -274,7 +274,10 @@ img {
     font-family: "Barlow Condensed Medium"; }
 
 .choose-tracks {
-  width: 100%; }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100vw; }
   @media (max-width: 800px) {
     .choose-tracks .choose-tracks__last__track {
       display: none; }
@@ -290,8 +293,7 @@ img {
   justify-content: space-between;
   background-color: #17181A; }
   .choose-tracks__last__track .content-left {
-    text-align: left;
-    float: left; }
+    text-align: left; }
     .choose-tracks__last__track .content-left .js-content-left__next-title {
       font-size: 24px;
       font-family: "Barlow Condensed BlackItalic";
@@ -320,8 +322,7 @@ img {
   padding: 35px 32px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  float: right; }
+  justify-content: space-between; }
   .choose-tracks__next__track .content-left {
     text-align: left;
     float: left; }

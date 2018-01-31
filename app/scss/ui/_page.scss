@@ -198,7 +198,10 @@ img {
 
 //BLOCS CHANSONS PRECEDENTE & SUIVANTE PRÉSENTS TRACK ET INDEX
 .choose-tracks {
-  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100vw;
 
   @include breakpoint(ipad-large) {
     .choose-tracks__last__track {
@@ -225,7 +228,7 @@ img {
 
   .content-left {
     text-align: left;
-    float: left;
+
 
     .js-content-left__next-title {
       font-size: 24px;
@@ -274,7 +277,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  float: right;
 
   .content-left {
     text-align: left;
