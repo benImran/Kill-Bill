@@ -1,6 +1,7 @@
 //burger
 .burger {
-    display: block;
+    display: none;
+    visibility: collapse;
     position: absolute;
     top: 0;
     right: 0;
@@ -14,4 +15,11 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+    font-family: $fontsemibold;
+    font-size: 32px;
+    text-transform: uppercase;
+
+    li:first-child {
+        margin-bottom: 42px;
+    }
 }

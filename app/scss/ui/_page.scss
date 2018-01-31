@@ -11,16 +11,23 @@ img {
   position: relative;
 
   .form-container {
-    
+    width: 100vw;
+    height: 30vh;
+    background-color: $yellow-style;
     position: absolute;
-    top: -45%;
+    bottom: 0;
     left: 0;
-    width: auto;
     z-index: -1;
 
-    @include breakpoint(mobile) {
-        top: 10%;
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 200px 200px;
+      border-color: transparent transparent #ffbf00 transparent;
     }
+
   }
 
   .title-container {
@@ -72,8 +79,20 @@ img {
     }
   }
 
-  .vinyl-anim img {
-    margin: 25px auto 15px;
+  .vinyl-anim {
+    position: relative;
+    .vinyl-anim__pochette {
+      margin: 25px auto 15px;
+      width: 50vw;
+    }
+
+    .vinyl-anim__vinyle {
+      position: absolute;
+      top: 10%;
+      left: 30%;
+      z-index: -1;
+    }
+    
   }
 
 }
@@ -89,10 +108,8 @@ img {
 
   h2 {
     color: $white;
-    //font-weight: 800;
     font-family: $fontextrabolditalic;
     font-size: 33px;
-    //font-style: italic;
     line-height: 48px;
     margin-bottom: 10px;
   }
@@ -290,4 +307,13 @@ img {
 
     }
   }
+}
+
+//track 
+.track-page {
+  background-color: $dark-blue;
+  font-family: $Barlow-cond;
+  text-align: center;
+  height: auto;
+  position: relative;
 }
