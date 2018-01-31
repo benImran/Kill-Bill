@@ -30,6 +30,11 @@ function scss() {
         .pipe(sync.stream());
 }
 
+function html() {
+    return gulp.src('app/index.html')
+        .pipe(gulp.dest('dist/'));
+}
+
 /**
  * JS
  */
@@ -72,13 +77,14 @@ function clean() {
     return del(['dist']);
 }
 
-// TODO: ADD GULP JS TO PARALLEL
-gulp.task('build', gulp.series(clean, gulp.parallel(scss, images, fonts )));
 
-gulp.task('default', gulp.parallel(scss, images, fonts, function(done) {
+// TODO: ADD GULP JS TO PARALLEL
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, images, fonts )));
+
+gulp.task('default', gulp.parallel(html, scss, images, fonts, function(done) {
     sync.init({
         server: {
-            baseDir: './'
+            baseDir: './dist'
         }
     });
 
