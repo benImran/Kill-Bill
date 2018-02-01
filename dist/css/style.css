@@ -166,7 +166,7 @@ img {
       display: block;
       height: 16vh;
       width: 100vw;
-      background: #FFD600;
+      background: #FFC100;
       position: absolute;
       bottom: 0px;
       left: 0; }
@@ -180,7 +180,7 @@ img {
         height: 0;
         border-style: solid;
         border-width: 0 0 90vh 200vw;
-        border-color: transparent transparent #FFD600 transparent; }
+        border-color: transparent transparent #FFC100 transparent; }
   .homepage .container-bottom {
     color: #0C101C;
     position: absolute;
@@ -197,15 +197,25 @@ img {
   .homepage .vinyl-anim {
     position: relative;
     margin: 25px auto;
-    max-width: 363px; }
+    max-width: 363px;
+    -webkit-box-shadow: 2px 0px 42px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 2px 0px 42px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 0px 42px 0px rgba(0, 0, 0, 0.15); }
     .homepage .vinyl-anim .vinyl-anim__pochette {
       width: auto; }
+      @media (min-width: 375px) {
+        .homepage .vinyl-anim .vinyl-anim__pochette {
+          width: 245px; } }
     .homepage .vinyl-anim .vinyl-anim__vinyle {
       position: absolute;
       top: 0;
       left: 30%;
       z-index: -1;
-      max-width: 363; }
+      max-width: 363px; }
+      @media (min-width: 375px) {
+        .homepage .vinyl-anim .vinyl-anim__vinyle {
+          width: 235px;
+          left: 25%; } }
 
 .content-vinyl {
   display: block;
@@ -312,15 +322,15 @@ img {
       font-size: 36px;
       font-family: "Barlow Condensed SemiBold";
       text-align: left; }
+    .previous-track .track-navigation .track-navigation__number--yellow {
+      color: #FFD600; }
     .previous-track .track-navigation .track-navigation__arrow {
       display: block;
       text-align: left; }
-    .previous-track .track-navigation .number--yellow {
-      color: #FFC100; }
 
 .next-track {
   width: 50%;
-  background-color: #FFD600;
+  background-color: #FFC100;
   padding: 35px 32px;
   display: flex;
   align-items: center;
@@ -338,7 +348,7 @@ img {
       color: #E31115; }
   .next-track .track-navigation {
     float: right; }
-    .next-track .track-navigation .track-navigation__number--yellow {
+    .next-track .track-navigation .track-navigation__number {
       display: block;
       font-size: 36px;
       font-family: "Barlow Condensed SemiBold";

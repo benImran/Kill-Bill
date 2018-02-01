@@ -45,7 +45,7 @@ img {
       display: block;
       height: 16vh;
       width: 100vw;
-      background: $yellow-st;
+      background: $yellow-style;
       position: absolute;
       bottom: 0px;
       left: 0;
@@ -60,7 +60,7 @@ img {
         height: 0;
         border-style: solid;
         border-width: 0 0 90vh 200vw;
-        border-color: transparent transparent $yellow-st transparent;
+        border-color: transparent transparent $yellow-style transparent;
       }
 
     }
@@ -89,9 +89,16 @@ img {
     position: relative;
     margin: 25px auto;
     max-width: 363px;
+    -webkit-box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
+    box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
 
     .vinyl-anim__pochette {
       width: auto;
+
+      @include breakpoint(iphone-6) {
+        width: 245px;
+      }
     }
 
     .vinyl-anim__vinyle {
@@ -99,7 +106,12 @@ img {
       top: 0;
       left: 30%;
       z-index: -1;
-      max-width: 363
+      max-width: 363px;
+
+      @include breakpoint(iphone-6) {
+        width: 235px;
+        left: 25%;
+      }
     }
     
   }
@@ -120,7 +132,7 @@ img {
     font-family: $fontextrabolditalic;
     font-size: 33px;
     line-height: 48px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
   }
 
   .title-song--red {
@@ -256,13 +268,13 @@ img {
       text-align: left;
     }
 
+    .track-navigation__number--yellow {
+      color: $yellow-st;
+    }
+
     .track-navigation__arrow {
       display: block;
       text-align: left;
-    }
-
-    .number--yellow {
-      color: $yellow-style;
     }
   }
 }
@@ -273,7 +285,7 @@ img {
   // height: 123px;
   // width: 375px;
   width: 50%;
-  background-color: $yellow-st;
+  background-color: $yellow-style;
   padding: 35px 32px;
   //min-height: 18vh;
   display: flex;
@@ -300,7 +312,7 @@ img {
   .track-navigation {
     float: right;
 
-    .track-navigation__number--yellow {
+    .track-navigation__number {
       display: block;
       font-size: 36px;
       font-family: $fontsemibold;
