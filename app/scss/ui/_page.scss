@@ -355,6 +355,15 @@ img {
     padding: 85px 40px 85px;
     display: flex;
     flex-flow: column wrap;
+
+    @include breakpoint(ipad-large) {
+      display: block;
+      column-count: 2;
+      column-gap: 150px;
+      padding-top: 125px; 
+      padding-bottom: 170px; 
+    }
+
   }
 
   .track-item {
@@ -364,6 +373,10 @@ img {
     padding-top: 11px;
     padding-bottom: 5px;
     margin-bottom: 56px;
+
+    @include breakpoint(ipad-large) {
+      margin-bottom: 80px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -411,6 +424,11 @@ img {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(ipad-large) {
+      display: none;
+    }
+
   }
 }
 

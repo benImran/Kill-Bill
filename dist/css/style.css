@@ -378,6 +378,13 @@ img {
     padding: 85px 40px 85px;
     display: flex;
     flex-flow: column wrap; }
+    @media (min-width: 800px) {
+      .tracklist-page .tracklist {
+        display: block;
+        column-count: 2;
+        column-gap: 150px;
+        padding-top: 125px;
+        padding-bottom: 170px; } }
   .tracklist-page .track-item {
     color: #E31115;
     position: relative;
@@ -385,6 +392,9 @@ img {
     padding-top: 11px;
     padding-bottom: 5px;
     margin-bottom: 56px; }
+    @media (min-width: 800px) {
+      .tracklist-page .track-item {
+        margin-bottom: 80px; } }
     .tracklist-page .track-item:last-child {
       margin-bottom: 0; }
     .tracklist-page .track-item::before {
@@ -419,6 +429,9 @@ img {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center; }
+    @media (min-width: 800px) {
+      .tracklist-page .arrow-up {
+        display: none; } }
 
 .track-page {
   background-color: #0C101C;
