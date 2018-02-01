@@ -206,11 +206,11 @@ img {
   width: 100vw;
 
   @include breakpoint(ipad-large) {
-    .choose-tracks__last__track {
+    .previous-track {
       display: none;
     }
 
-    .choose-tracks__next__track {
+    .next-track {
       width: 100%;
     }
   }
@@ -218,7 +218,7 @@ img {
 
 
 //bloc seulement sur desktop pour aller à la chanson précédente
-.choose-tracks__last__track {
+.previous-track {
   width: 50%;
   float: left;
   padding: 35px 32px;
@@ -228,35 +228,35 @@ img {
   justify-content: space-between;
   background-color: $black-style;
 
-  .content-left {
+  .previous-track__artist-infos {
     text-align: left;
 
 
-    .js-content-left__next-title {
+    .previous-track__title {
       font-size: 24px;
       font-family: $fontblackitalic;
       padding-bottom: 5px;
       color: $white;
     }
 
-    .js-content-left_next-artist {
+    .previous-track__artist {
       font-size: 19px;
       font-family: $fontregular;
       color: $red-st;
     }
   }
 
-  .content-right {
+  .track-navigation {
     float: right;
 
-    .js-content-right__next-song-number {
+    .track-navigation__number {
       display: block;
       font-size: 36px;
       font-family: $fontsemibold;
       text-align: left;
     }
 
-    .arrow {
+    .track-navigation__arrow {
       display: block;
       text-align: left;
     }
@@ -269,7 +269,7 @@ img {
 
 
 //bloc présent sur desk et mobile, width à 100% sur mobile
-.choose-tracks__next__track {
+.next-track {
   // height: 123px;
   // width: 375px;
   width: 50%;
@@ -280,34 +280,34 @@ img {
   align-items: center;
   justify-content: space-between;
 
-  .content-left {
+  .next-track__artist-infos {
     text-align: left;
     float: left;
 
-    h4 {
+    .next-track__title {
       font-size: 24px;
       font-family: $fontblackitalic;
       padding-bottom: 5px;
     }
 
-    p {
+    .next-track__artist {
       font-size: 19px;
       font-family: $fontregular;
       color: $red-st;
     }
   }
 
-  .content-right {
+  .track-navigation {
     float: right;
 
-    p {
+    .track-navigation__number--yellow {
       display: block;
       font-size: 36px;
       font-family: $fontsemibold;
       text-align: left;
     }
 
-    .arrow {
+    .track-navigation__arrow--yellow {
       display: block;
       text-align: left;
     }

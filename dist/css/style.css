@@ -281,12 +281,12 @@ img {
   justify-content: space-between;
   width: 100vw; }
   @media (max-width: 800px) {
-    .choose-tracks .choose-tracks__last__track {
+    .choose-tracks .previous-track {
       display: none; }
-    .choose-tracks .choose-tracks__next__track {
+    .choose-tracks .next-track {
       width: 100%; } }
 
-.choose-tracks__last__track {
+.previous-track {
   width: 50%;
   float: left;
   padding: 35px 32px;
@@ -294,56 +294,56 @@ img {
   align-items: center;
   justify-content: space-between;
   background-color: #17181A; }
-  .choose-tracks__last__track .content-left {
+  .previous-track .previous-track__artist-infos {
     text-align: left; }
-    .choose-tracks__last__track .content-left .js-content-left__next-title {
+    .previous-track .previous-track__artist-infos .previous-track__title {
       font-size: 24px;
       font-family: "Barlow Condensed BlackItalic";
       padding-bottom: 5px;
       color: #FFFFFF; }
-    .choose-tracks__last__track .content-left .js-content-left_next-artist {
+    .previous-track .previous-track__artist-infos .previous-track__artist {
       font-size: 19px;
       font-family: "Barlow Condensed Regular";
       color: #E31115; }
-  .choose-tracks__last__track .content-right {
+  .previous-track .track-navigation {
     float: right; }
-    .choose-tracks__last__track .content-right .js-content-right__next-song-number {
+    .previous-track .track-navigation .track-navigation__number {
       display: block;
       font-size: 36px;
       font-family: "Barlow Condensed SemiBold";
       text-align: left; }
-    .choose-tracks__last__track .content-right .arrow {
+    .previous-track .track-navigation .track-navigation__arrow {
       display: block;
       text-align: left; }
-    .choose-tracks__last__track .content-right .number--yellow {
+    .previous-track .track-navigation .number--yellow {
       color: #FFC100; }
 
-.choose-tracks__next__track {
+.next-track {
   width: 50%;
   background-color: #FFD600;
   padding: 35px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between; }
-  .choose-tracks__next__track .content-left {
+  .next-track .next-track__artist-infos {
     text-align: left;
     float: left; }
-    .choose-tracks__next__track .content-left h4 {
+    .next-track .next-track__artist-infos .next-track__title {
       font-size: 24px;
       font-family: "Barlow Condensed BlackItalic";
       padding-bottom: 5px; }
-    .choose-tracks__next__track .content-left p {
+    .next-track .next-track__artist-infos .next-track__artist {
       font-size: 19px;
       font-family: "Barlow Condensed Regular";
       color: #E31115; }
-  .choose-tracks__next__track .content-right {
+  .next-track .track-navigation {
     float: right; }
-    .choose-tracks__next__track .content-right p {
+    .next-track .track-navigation .track-navigation__number--yellow {
       display: block;
       font-size: 36px;
       font-family: "Barlow Condensed SemiBold";
       text-align: left; }
-    .choose-tracks__next__track .content-right .arrow {
+    .next-track .track-navigation .track-navigation__arrow--yellow {
       display: block;
       text-align: left; }
 
