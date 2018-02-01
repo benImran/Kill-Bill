@@ -180,6 +180,16 @@ img {
   }
 
   .content-track {
+      margin-top: 173px;
+
+      @include breakpoint(ipad-large) {
+        .content-track {
+          max-width: 590px;
+          margin: 0 auto;
+        }
+        
+      }
+
     .content-track__title {
       color: $yellow-style;
       font-family: $fontsemibold;
@@ -217,15 +227,21 @@ img {
   justify-content: space-between;
   width: 100vw;
 
-  @include breakpoint(ipad-large) {
     .previous-track {
       display: none;
+
+      @include breakpoint(ipad-large) {
+        display: flex;
+      }
     }
 
     .next-track {
       width: 100%;
+
+      @include breakpoint(ipad-large) {
+        width: 50%;
+      }
     }
-  }
 }
 
 

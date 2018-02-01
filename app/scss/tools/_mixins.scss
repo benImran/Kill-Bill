@@ -46,7 +46,7 @@
   }
 
   @if $point == ipad-large {
-    @media (max-width: 800px) { @content ; }
+    @media (min-width: 800px) { @content ; }
   }
 
   @if $point == macbook {
