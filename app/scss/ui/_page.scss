@@ -366,6 +366,7 @@ img {
 
   }
 
+
   .track-item {
     color: $red-st;
     position: relative;
@@ -373,6 +374,16 @@ img {
     padding-top: 11px;
     padding-bottom: 5px;
     margin-bottom: 56px;
+
+    .track-item__name--special-width {
+      max-width: 210px;
+
+      @include breakpoint(ipad) {
+        max-width: 100%;
+      }
+    }
+
+    
 
     @include breakpoint(ipad-large) {
       margin-bottom: 80px;
@@ -404,6 +415,7 @@ img {
       display: inline;
       text-align: left;
       font-family: $fontmedium;
+      color: $red-st;
 
     }
 

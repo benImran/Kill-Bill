@@ -392,6 +392,11 @@ img {
     padding-top: 11px;
     padding-bottom: 5px;
     margin-bottom: 56px; }
+    .tracklist-page .track-item .track-item__name--special-width {
+      max-width: 210px; }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .tracklist-page .track-item .track-item__name--special-width {
+          max-width: 100%; } }
     @media (min-width: 800px) {
       .tracklist-page .track-item {
         margin-bottom: 80px; } }
@@ -414,7 +419,8 @@ img {
       font-size: 18px;
       display: inline;
       text-align: left;
-      font-family: "Barlow Condensed Medium"; }
+      font-family: "Barlow Condensed Medium";
+      color: #E31115; }
     .tracklist-page .track-item .track-item__number {
       font-size: 48px;
       color: #85878D;
