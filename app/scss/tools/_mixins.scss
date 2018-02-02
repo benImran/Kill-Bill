@@ -31,32 +31,32 @@
 
 
   @if $point == iphone-5 {
-    @media (min-width: 320px) { @content ; } 
+    @media (max-width: 320px) { @content ; } 
 
     }
 
   @if $point == iphone-6 {
     @media (min-width: 375px) { @content ; } 
-  
   }
 
   @if $point == ipad {
     @media (min-width: 768px) and (max-width : 1024px) { @content ; } 
-  
   }
 
   @if $point == ipad-large {
     @media (min-width: 800px) { @content ; }
   }
 
+  @if $point == small-desk {
+    @media (min-width: 1180px) { @content ; }
+  }
+
   @if $point == macbook {
     @media (min-width: 1480px) and (min-height: 900) { @content ; } 
-  
   }
 
   @if $point == desktop {
     @media (min-width: 1680px) and (min-height: 1050) { @content ; } 
-  
   }
     
 }

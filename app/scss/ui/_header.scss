@@ -5,4 +5,30 @@
   right: 20px;
   top: 25px;
   z-index: 4;
+
+  &.burger-menu--desktop {
+  	display: none;
+  	right: 120px;
+  	top: 42px;
+  	
+  	a {
+  		font-family: $fontsemibold;
+  		color: $yellow-style;
+  		font-size: 20px;
+  		text-transform: uppercase;
+  		margin-right: 60px;
+
+  		&:last-child {
+  			margin-right: 0;
+  		}
+  	}
+  }
+
+  @include breakpoint(ipad-large) {
+    display: none;
+
+    &.burger-menu--desktop {
+    	display: block;
+    }
+  }
 }

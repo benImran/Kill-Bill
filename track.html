@@ -12,31 +12,24 @@
     <link rel="stylesheet" href="dist/css/style.css">
     <!--endbuild-->
 </head>
-<body class="homepage">
+<body class="track">
     <header>
-        <div class="burger-menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="13" viewBox="0 0 26 13">
-                <g fill="#FFC100" fill-rule="evenodd">
-                    <rect width="26" height="3"/>
-                    <rect width="26" height="3" y="10"/>
-                </g>
-            </svg>                  
-        </div>
-    <div class="burger">
-        <ul class="burger__list">
-           <li class="burger__item">
-               <a href="#" class="burger__link">Home</a>
-           </li> 
-           <li class="burger__item">
-               <a href="#" class="burger__link">Index</a>
-           </li>
-        </ul>
-    </div>
-    </header>
-    
+            <div class="burger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="13" viewBox="0 0 26 13">
+                    <g fill="#FFC100" fill-rule="evenodd">
+                        <rect width="26" height="3"/>
+                        <rect width="26" height="3" y="10"/>
+                    </g>
+                </svg>                  
+            </div>
+            <div class="burger-menu burger-menu--desktop">
+                <a href="#">home</a>
+                <a href="#">index</a>                  
+            </div>
+        </header>
     <main>
-        <div class="js content-vinyl">
-            <h2 class="js title-song">
+        <div class="content-vinyl">
+            <h2 class="title-song">
                 Bang Bang - My baby shot me down
             </h2>
             <p class="title-song--red js-name-artist">
@@ -56,38 +49,66 @@
             </div>
         </div>
         <div class="choose-tracks">
-            <div class="previous-track"> 
-                <div class="previous-track__artist-infos"> 
-                        <h4 class="previous-track__title"> 
-                            That Certain Female
-                        </h4>
-                        <p class="previous-track__artist"> 
-                            Charlie Feathers
-                        </p>
-                </div>
-                <div class="track-navigation">  
-                    <p class="track-navigation__number track-navigation__number--yellow">O1</p>
-                    <div class="track-navigation__arrow--white">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59" height="9"><image data-name="Calque 1" width="59" height="9" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAAAmBAMAAADuNcDXAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEUAAAAMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwAAACBjUx6AAAADnRSTlMAEFDPYK8w799wn0CPIIJsELIAAAABYktHRACIBR1IAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4gEbEzAPfLnfTAAAAKxJREFUWMPtl78JwkAYRz9BAgYEiYvoAsEJjkwgdnYpLZ3Fzs4F3MElFJUUbwavygh5xflr7rrHg7vvT8TUaSYnjpm1O4295qWx96CJH+Ftsaszn4MofipSvBfF5/BdWfAEW1H8WaT4whS/QWexaxjycVfSwiUCK4PIzuIee+Ox8y/T3ppVXczikjxts5n8tQVtbVhM3qxYqHYlapsr0UPciGpPO+KqaUcsx9sP9EfEdEd32BwAAAAASUVORK5CYII="/></svg>
-                    </div>
-                </div> 
-            </div>
-            <div class="next-track">
-                <div class="next-track__artist-infos">
-                    <h4 class="next-track__title">
+            <a href="#" class="track-link track-link--desktop track-link--black-reversed">
+                <div class="track-link__track-infos">
+                    <p class="track-link__track-title track-link__track-title--white">
                         That Certain Female
-                    </h4>
-                    <p class="next-track__artist">
+                    </p>
+                    <p class="track-link__artist">
                         Charlie Feathers
                     </p>
                 </div>
-                <div class="track-navigation"> 
-                    <p class="track-navigation__number">O2</p>
-                    <div class="track-navigation__arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="59" height="9"><image data-name="Calque 1" width="59" height="9" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAAAmBAMAAADuNcDXAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEUAAAAMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwMEBwAAACBjUx6AAAADnRSTlMAEFDPYK8w799wn0CPIIJsELIAAAABYktHRACIBR1IAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4gEbEzAPfLnfTAAAAKxJREFUWMPtl78JwkAYRz9BAgYEiYvoAsEJjkwgdnYpLZ3Fzs4F3MElFJUUbwavygh5xflr7rrHg7vvT8TUaSYnjpm1O4295qWx96CJH+Ftsaszn4MofipSvBfF5/BdWfAEW1H8WaT4whS/QWexaxjycVfSwiUCK4PIzuIee+Ox8y/T3ppVXczikjxts5n8tQVtbVhM3qxYqHYlapsr0UPciGpPO+KqaUcsx9sP9EfEdEd32BwAAAAASUVORK5CYII="/></svg>
+                <div class="track-link__track-infos">
+                    <p class="track-link__track-number track-link__track-number--yellow">02</p>
+                    <div class="track-link__arrow track-link__arrow--desktop track-link__arrow--white">
+                        <svg width="17px" height="28px" viewBox="0 0 17 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Desktop-HD-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-68.000000, -1265.000000)">
+                                <g id="Group-2" transform="translate(50.000000, 1238.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                    <g id="Group-6">
+                                        <g id="ic_keyboard_arrow_right_black_24px-(2)" transform="translate(27.000000, 41.000000) scale(-1, 1) rotate(360.000000) translate(-27.000000, -41.000000) translate(0.000000, 13.000000)">
+                                            <polygon id="Shape" points="19.3275 38.5352 29.6325 28.07 19.3275 17.6048 22.5 14.39 36 28.07 22.5 41.75"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
                     </div>
                 </div>
-            </div>
+            </a>
+            <a href="#" class="track-link">
+                <div class="track-link__track-infos">
+                    <p class="track-link__track-title">
+                        Bang Bang - My baby shot me down
+                    </p>
+                    <p class="track-link__artist">
+                        Charlie Feathers
+                    </p>
+                </div>
+                <div class="track-link__track-infos">
+                    <p class="track-link__track-number">02</p>
+                    <div class="track-link__arrow">
+                        <svg width="59px" height="9px" viewBox="0 0 59 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="iPhone-8-Copy-11" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-297.000000, -735.000000)">
+                                <g id="Group-4" transform="translate(0.000000, 653.000000)" stroke="#0C101C">
+                                    <g id="Group-3" transform="translate(297.000000, 82.000000)">
+                                        <path d="M0.5,4.5 L57.5,4.5" id="Line" stroke-linecap="square"></path>
+                                        <polyline id="Path-4" points="54.1540271 0.493062626 58.0384069 4.52558288 54.1540271 8.45906788"></polyline>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="track-link__arrow track-link__arrow--desktop">
+                        <svg width="17px" height="28px" viewBox="0 0 17 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Desktop-HD-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1355.000000, -1265.000000)">
+                                <g id="ic_keyboard_arrow_right_black_24px-(2)" transform="translate(1363.000000, 1279.000000) rotate(360.000000) translate(-1363.000000, -1279.000000) translate(1336.000000, 1251.000000)" fill="#000000" fill-rule="nonzero">
+                                    <polygon id="Shape" points="19.3275 38.5352 29.6325 28.07 19.3275 17.6048 22.5 14.39 36 28.07 22.5 41.75"></polygon>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </a>
         </div>
     </main>
 </body>
