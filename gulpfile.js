@@ -1,40 +1,40 @@
 // ---------------------------------------------------------------
 // Include Plugins
 // ---------------------------------------------------------------
-var gulp = require('gulp');
+let gulp = require('gulp');
 
 // Serveur local
-var browserSync = require('browser-sync');
+let browserSync = require('browser-sync');
 
 // Pour le sass / css
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var stripCssComments = require('gulp-strip-css-comments');
+let sass = require('gulp-sass');
+let sourcemaps = require('gulp-sourcemaps');
+let autoprefixer = require('gulp-autoprefixer');
+let cleanCSS = require('gulp-clean-css');
+let stripCssComments = require('gulp-strip-css-comments');
 
 // Pour le JS
-var uglify = require('gulp-uglify');
+let uglify = require('gulp-uglify');
 
 // Pour les images
-var imagemin = require('gulp-imagemin');
+let imagemin = require('gulp-imagemin');
 
 // Concatenation des imports HTML
-var usemin = require('gulp-usemin');
+let usemin = require('gulp-usemin');
 
 // Gestion des erreurs / notifs
-var plumber = require('gulp-plumber');
-var gutil = require('gulp-util');
-var notify = require('gulp-notify');
+let plumber = require('gulp-plumber');
+let gutil = require('gulp-util');
+let notify = require('gulp-notify');
 
 // Autres
-var del = require('del');
-var size = require('gulp-size');
+let del = require('del');
+let size = require('gulp-size');
 
 // ---------------------------------------------------------------
 // Configuration
 // ---------------------------------------------------------------
-var path = {
+let path = {
 	sass: 'app/scss/**/*.scss',
 	css: 'app/css/**/*.css',
   	devcss: 'app/css/',
@@ -58,15 +58,15 @@ var path = {
 	dist_resources: './dist/resources'
 };
 
-var autoprefixerOptions = {
+let autoprefixerOptions = {
 	browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie >= 9']
 };
 
-var reload = browserSync.reload;
+let reload = browserSync.reload;
 
 // gulp-plumber + gulp-util are used for proper error handling and formatting
 // see source : https://www.timroes.de/2015/01/06/proper-error-handling-in-gulp-js/
-var gulp_src = gulp.src;
+let gulp_src = gulp.src;
 gulp.src = function() {
 	return gulp_src.apply(gulp, arguments)
 		.pipe(plumber(function(error) {
