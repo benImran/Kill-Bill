@@ -121,7 +121,7 @@ img {
         width: 353px;
       }
     }
-    
+
   }
 
 }
@@ -140,7 +140,7 @@ img {
     font-family: $fontextrabolditalic;
     font-size: 33px;
     line-height: 48px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
 
   .title-song--red {
@@ -195,7 +195,7 @@ img {
           max-width: 590px;
           margin: 0 auto;
         }
-        
+
       }
 
     .content-track__title {
@@ -274,12 +274,12 @@ img {
   @include breakpoint(ipad-large) {
     width: 50%;
     padding-left: 30px;
-    padding-right: 30px; 
+    padding-right: 30px;
   }
 
   @include breakpoint(small-desk) {
     padding-left: 68px;
-    padding-right: 68px; 
+    padding-right: 68px;
   }
 
   &.track-link--desktop {
@@ -288,12 +288,12 @@ img {
     @include breakpoint(ipad-large) {
       display: flex;
       padding-left: 30px;
-      padding-right: 30px;  
+      padding-right: 30px;
     }
 
     @include breakpoint(small-desk) {
       padding-left: 68px;
-      padding-right: 68px; 
+      padding-right: 68px;
     }
 
   }
@@ -393,8 +393,8 @@ img {
       display: block;
       column-count: 2;
       column-gap: 150px;
-      padding-top: 125px; 
-      padding-bottom: 170px; 
+      padding-top: 125px;
+      padding-bottom: 170px;
     }
 
   }
@@ -415,7 +415,7 @@ img {
       }
     }
 
-    
+
 
     @include breakpoint(ipad-large) {
       margin-bottom: 80px;
@@ -476,7 +476,7 @@ img {
   }
 }
 
-//track 
+//track
 .track-page {
   background-color: $dark-blue;
   font-family: $Barlow-cond;
