@@ -6,45 +6,29 @@
     <title>Kill bill</title>
     <meta name="description" content="">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
+
     <!--build:css css/style.css-->
-    <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--endbuild-->
 </head>
-<body class="homepage">
+<body class="track">
     <header>
-        <div class="burger-menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="13" viewBox="0 0 26 13">
-                <g fill="#FFC100" fill-rule="evenodd">
-                    <rect width="26" height="3"/>
-                    <rect width="26" height="3" y="10"/>
-                </g>
-            </svg>                  
-        </div>
-        <div class="burger-menu burger-menu--desktop">
-            <a href="#">home</a>
-            <a href="#">index</a>                  
-        </div>
-    </header>
+            <div class="burger-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="13" viewBox="0 0 26 13">
+                    <g fill="#FFC100" fill-rule="evenodd">
+                        <rect width="26" height="3"/>
+                        <rect width="26" height="3" y="10"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="burger-menu burger-menu--desktop">
+                <a href="index.html">home</a>
+                <a href="tracklist.html">index</a>
+            </div>
+        </header>
     <main>
-        <div class="homepage-container">
-            <div class="form-container"> <!-- triangle -->
-            </div>
-            <div class="title-container">
-                <h1 class="title title--yellow">kill</h1>
-                <div class="vinyl-anim">
-                    <img class="vinyl-anim__pochette" src="dist/img/pochette.png" alt=" ">
-                    <img class="vinyl-anim__vinyle" src="dist/img/vinyle.png" alt=" ">
-                </div>
-                <h1 class="title title--black">bill</h1>
-            </div>
-            <div class="container-bottom">
-                <p>Scrollez pour explorer le vinyle</p>
-            </div>
-        </div>
-        <div class="js content-vinyl">
-            <h2 class="js title-song">
+        <div class="content-vinyl">
+            <h2 class="title-song">
                 Bang Bang - My baby shot me down
             </h2>
             <p class="title-song--red js-name-artist">
@@ -126,5 +110,8 @@
             </a>
         </div>
     </main>
-</body>
+    <!--build:js js/main.min.js -->
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>

@@ -3,35 +3,26 @@ img {
   height: auto;
 }
 
-.homepage {
+.homepage, .track {
   background-color: $dark-blue;
   font-family: $Barlow-cond;
   text-align: center;
   height: auto;
   position: relative;
 
-  .form-container {
-    position: absolute;
-    top: -45%;
-    left: 0;
-    width: auto;
-    z-index: -1;
-
-    @include breakpoint(mobile){
-      top: 10%;
-      z-index: 99;
-    }
-  }
   .title-container {
     z-index: 999;
   }
   .title {
     //font-weight: 800;
     font-family: $fontextrabold;
-    color: $yellow-style;
     text-transform: uppercase;
     text-align: center;
     font-size: 72px;
+  }
+
+  .title--yellow {
+    color: $yellow-style;
   }
 
   .title--black {
@@ -39,6 +30,7 @@ img {
   }
 
   .homepage-container {
+    position: relative;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -47,7 +39,31 @@ img {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    position: relative;
+    z-index: 2;
+
+    .form-container { //triangle
+      display: block;
+      height: 16vh;
+      width: 100vw;
+      background: $yellow-style;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        /* bottom: 0px; */
+        top: -455%;
+        left: -50vw;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 90vh 200vw;
+        border-color: transparent transparent $yellow-style transparent;
+      }
+
+    }
   }
 
   .container-bottom {
@@ -69,8 +85,43 @@ img {
     }
   }
 
-  .vinyl-anim img {
-    margin: 25px auto 15px;
+  .vinyl-anim {
+    position: relative;
+    margin: 25px auto;
+    max-width: 363px;
+    -webkit-box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
+    box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
+
+    .vinyl-anim__pochette {
+      width: auto;
+
+      @include breakpoint(iphone-6) {
+        width: 245px;
+      }
+
+      @include breakpoint(ipad-large) {
+        width: 363px;
+      }
+    }
+
+    .vinyl-anim__vinyle {
+      position: absolute;
+      top: 0;
+      left: 30%;
+      z-index: -1;
+      max-width: 363px;
+
+      @include breakpoint(iphone-6) {
+        width: 235px;
+        left: 25%;
+      }
+
+      @include breakpoint(ipad-large) {
+        width: 353px;
+      }
+    }
+
   }
 
 }
@@ -86,31 +137,29 @@ img {
 
   h2 {
     color: $white;
-    //font-weight: 800;
     font-family: $fontextrabolditalic;
     font-size: 33px;
-    //font-style: italic;
     line-height: 48px;
     margin-bottom: 10px;
   }
 
-  .title-red {
+  .title-song--red {
     color: $red-style;
     font-size: 27px;
   }
 
-  .number-track {
+  .js-container-number {
     text-align: center;
     margin-top: 73px;
 
-    p {
+    .js-container-number__first {
       display: block;
       color: $white;
       font-size: 72px;
       font-family: $fontsemibold;
     }
 
-    .grey-number {
+    .container-number__grey {
       font-size: 16px;
       opacity: 0.6;
       font-family: $fontregular;
@@ -138,8 +187,18 @@ img {
     margin: 80px auto 0;
   }
 
-  .text-track {
-    h3 {
+  .content-track {
+      margin-top: 173px;
+
+      @include breakpoint(ipad-large) {
+        .content-track {
+          max-width: 590px;
+          margin: 0 auto;
+        }
+
+      }
+
+    .content-track__title {
       color: $yellow-style;
       font-family: $fontsemibold;
       text-transform: uppercase;
@@ -159,7 +218,7 @@ img {
       }
     }
 
-    p {
+    .js-content-track__about {
       margin-top: 24px;
       line-height: 32px;
       color: $white;
@@ -169,50 +228,153 @@ img {
   }
 }
 
-.next-track {
-  // height: 123px;
-  // width: 375px;
-  background-color: $yellow-st;
-  padding: 35px 32px;
-  //min-height: 18vh;
+//BLOCS CHANSONS PRECEDENTE & SUIVANTE PRÉSENTS TRACK ET INDEX
+.choose-tracks {
   display: flex;
-  align-items: center;
+  flex-flow: row wrap;
   justify-content: space-between;
+  width: 100vw;
 
-  .content-left {
-    text-align: left;
-    float: left;
+    .previous-track {
+      display: none;
 
-    h4 {
-      font-size: 24px;
-      font-family: $fontblackitalic;
-      padding-bottom: 5px;
+      @include breakpoint(ipad-large) {
+        display: flex;
+      }
     }
 
-    p {
-      font-size: 19px;
-      font-family: $fontregular;
-      color: $red-st;
+    .next-track {
+      width: 100%;
+
+      @include breakpoint(ipad-large) {
+        width: 50%;
+      }
+    }
+}
+
+
+//bloc seulement sur desktop pour aller à la chanson précédente
+
+.choose-tracks {
+  display: flex;
+  width: 100vw;
+}
+
+.track-link {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100%;
+  padding: 35px 32px;
+  background-color: $yellow-style;
+  text-align: left;
+  align-items: center;
+
+  @include breakpoint(ipad-large) {
+    width: 50%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include breakpoint(small-desk) {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
+
+  &.track-link--desktop {
+    display: none;
+
+    @include breakpoint(ipad-large) {
+      display: flex;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @include breakpoint(small-desk) {
+      padding-left: 68px;
+      padding-right: 68px;
+    }
+
+  }
+
+  &.track-link--black-reversed {
+    flex-direction: row-reverse;
+    background-color: $black;
+
+    .track-link__track-infos:nth-child(2) {
+      display: flex;
+      flex-flow: row wrap;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+      .track-link__arrow {
+        padding-right: 68px;
+      }
+
     }
   }
 
-  .content-right {
-    float: right;
+  .track-link__track-title {
+    font-size: 24px;
+    font-family: $fontblackitalic;
+    padding-bottom: 5px;
+    color: $black;
 
-    p {
-      display: block;
-      font-size: 36px;
-      font-family: $fontsemibold;
-      text-align: left;
+    &.track-link__track-title--white {
+      color: $white;
+    }
+  }
+
+  .track-link__artist {
+    font-size: 19px;
+    font-family: $fontregular;
+    color: $red-st;
+  }
+
+  .track-link__track-number {
+    font-size: 36px;
+    font-family: $fontsemibold;
+    color: $black;
+
+    &.track-link__track-number--yellow {
+      color: $yellow-darkened;
+    }
+  }
+
+  .track-link__arrow {
+
+    @include breakpoint(ipad-large) {
+      display: none;
     }
 
-    .arrow {
-      display: block;
-      text-align: left;
-    }
+
+    &.track-link__arrow--desktop {
+      display: none;
+
+      @include breakpoint(ipad-large) {
+        display: block;
+      }
   }
 }
 
+.track-link:not(.track-link--black-reversed) {
+
+  @include breakpoint(ipad-large) {
+
+    .track-link__track-infos:nth-child(2) {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+
+      .track-link__track-number {
+        padding-right: 68px;
+      }
+
+    }
+  }
+}
 
 //tracklist
 .tracklist-page {
@@ -226,6 +388,15 @@ img {
     padding: 85px 40px 85px;
     display: flex;
     flex-flow: column wrap;
+
+    @include breakpoint(ipad-large) {
+      display: block;
+      column-count: 2;
+      column-gap: 150px;
+      padding-top: 125px;
+      padding-bottom: 170px;
+    }
+
   }
 
   .track-item {
@@ -235,6 +406,20 @@ img {
     padding-top: 11px;
     padding-bottom: 5px;
     margin-bottom: 56px;
+
+    .track-item__name--special-width {
+      max-width: 210px;
+
+      @include breakpoint(ipad-large) {
+        max-width: 100%;
+      }
+    }
+
+
+
+    @include breakpoint(ipad-large) {
+      margin-bottom: 80px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -248,7 +433,7 @@ img {
       background-color: $yellow-style;
     }
 
-    .track-name {
+    .track-item__name {
       color: $white;
       font-size: 26px;
       line-height: 38px;
@@ -257,15 +442,16 @@ img {
       font-family: $fontextrabolditalic;
     }
 
-    .track-artist {
+    .track-item__artist {
       font-size: 18px;
       display: inline;
       text-align: left;
       font-family: $fontmedium;
+      color: $red-st;
 
     }
 
-    .track-number {
+    .track-item__number {
       font-size: 48px;
       color: $grey-style;
       position: absolute;
@@ -283,8 +469,18 @@ img {
     align-items: center;
     justify-content: center;
 
-    .arrow-image {
-
+    @include breakpoint(ipad-large) {
+      display: none;
     }
+
   }
+}
+
+//track
+.track-page {
+  background-color: $dark-blue;
+  font-family: $Barlow-cond;
+  text-align: center;
+  height: auto;
+  position: relative;
 }
