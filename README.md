@@ -1,6 +1,6 @@
 Introduction du projet Kill-Bill : 
 
-Pour installer le projet il faut au préalable :<br>
+Pour installer le projet sur MAC il faut au préalable :<br>
   1. Avoir xCode. <br>
         - Ouvrir le terminal et taper la commande "$ xcode-select -p" afin de vérifier si vous disposez de xCode.<br>
         Si vous avez déjà installé xCode, le terminal vous dira "/Applications/Xcode.app/Contents/Developer".
@@ -21,7 +21,7 @@ Pour installer le projet il faut au préalable :<br>
      - Créer un dossier, aller dans le dossier via le terminal $ cd/...<br>
         Sinon glisser le dossier dans le terminal pour être directement dedans.
         
-    - Faire un git clone https://github.com/benImran/hetic-w2-p2019-13.git
+    - Faire un $ git clone https://github.com/benImran/hetic-w2-p2019-13.git
 
 3. Enfin aller dans le dossier cloné, tapper dans le terminal : <br> 
     
