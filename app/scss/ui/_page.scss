@@ -86,6 +86,10 @@ img {
 
     p {
       line-height: 40px;
+
+      @include breakpoint(iphone-5) {
+        line-height: 22px;
+      }
     }
   }
 
@@ -97,8 +101,16 @@ img {
     -moz-box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
     box-shadow: 2px 0px 42px 0px rgba(0,0,0,0.15);
 
+    @include breakpoint(iphone-5) {
+      margin: 5px auto;
+    }
+
     .vinyl-anim__pochette {
       width: auto;
+      
+      @include breakpoint(iphone-5) {
+        width: 200px;
+      }
 
       @include breakpoint(iphone-6) {
         width: 245px;
@@ -115,6 +127,11 @@ img {
       left: 30%;
       z-index: -1;
       max-width: 363px;
+
+      @include breakpoint(iphone-5) {
+        width: 190px;
+        left: 25%;
+      }
 
       @include breakpoint(iphone-6) {
         width: 235px;
@@ -397,9 +414,18 @@ img {
       display: block;
       column-count: 2;
       column-gap: 150px;
-      padding-top: 125px;
-      padding-bottom: 170px;
+      padding: 125px 300px 125px;
     }
+
+    @include breakpoint(ipad-pro) {
+      padding: 185px 60px 115px;
+    }
+
+    @include breakpoint(small-desk) {
+      padding: 125px 235px 125px;
+    }
+
+    
 
   }
 
