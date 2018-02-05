@@ -71,6 +71,15 @@ function fonts() {
 }
 
 /**
+ * MUSIC
+ */
+function music() {
+    return gulp.src('app/music/**/*')
+        .pipe(gulp.dest('dist/music'));
+}
+
+
+/**
  * GLOBAL
  */
 function clean() {
@@ -79,7 +88,7 @@ function clean() {
 
 
 // TODO: ADD GULP JS TO PARALLEL
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, images, fonts )));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, images, fonts, music )));
 
 gulp.task('default', gulp.parallel(html, scss, images, fonts, function(done) {
     sync.init({
