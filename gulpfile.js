@@ -56,7 +56,7 @@ function js() {
         .pipe(gulpif(!isProd, sourcemaps.init({loadMaps: true})))
         .pipe(uglify())
         .pipe(gulpif(!isProd, sourcemaps.write('.')))
-        .pipe(gulp.dest('app/js'))
+        .pipe(gulp.dest('dist/js'))
         .pipe(sync.stream());
 }
 
