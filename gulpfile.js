@@ -13,6 +13,7 @@ let source = require('vinyl-source-stream');
 let sourcemaps = require('gulp-sourcemaps');
 let sync = require('browser-sync').create();
 let uglify = require('gulp-uglify');
+let pxtorem = require('gulp-pxtorem');
 
 let isProd = process.env.NODE_ENV === 'production';
 
@@ -21,7 +22,7 @@ let isProd = process.env.NODE_ENV === 'production';
  * SCSS
  */
 function scss() {
-    return gulp.src('app/scss/style.scss')
+    return gulp.src('app/scss/**/*.scss')
         .pipe(gulpif(!isProd, sourcemaps.init()))
         .pipe(sass())
         .pipe(gulpif(isProd, minifyCSS()))
@@ -30,9 +31,16 @@ function scss() {
         .pipe(sync.stream());
 }
 
+function css() {
+    gulp.src('dist/**/*.css')
+        .pipe(pxtorem())
+        .pipe(gulp.dest('dist/css/'));
+}
+
 function html() {
-    return gulp.src('app/index.html')
-        .pipe(gulp.dest('dist/'));
+    return gulp.src('app/**/*.html')
+        .pipe(gulp.dest('dist/'))
+        .pipe(sync.stream());
 }
 
 /**
@@ -40,10 +48,10 @@ function html() {
  */
 // TODO: GULP PATH FOR JS
 function js() {
-    return browserify({entries: ['app/js'], debug: true})
+    return browserify({entries: ['app/**/*.js'], debug: true})
         .transform(babelify, {presets: 'es2015'})
         .bundle()
-        .pipe(source('script.js'))
+        .pipe(source('main.js'))
         .pipe(buffer())
         .pipe(gulpif(!isProd, sourcemaps.init({loadMaps: true})))
         .pipe(uglify())
@@ -57,7 +65,7 @@ function js() {
  */
 
 function images() {
-    return gulp.src('app/img_content/**/*')
+    return gulp.src('app/img/**/*')
         .pipe(gulpif(isProd, imagemin({verbose: true})))
         .pipe(gulp.dest('dist/img'));
 }
@@ -79,9 +87,9 @@ function clean() {
 
 
 // TODO: ADD GULP JS TO PARALLEL
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, images, fonts )));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, css, images, fonts )));
 
-gulp.task('default', gulp.parallel(html, scss, images, fonts, function(done) {
+gulp.task('default', gulp.parallel(html, scss, css, images, fonts, function(done) {
     sync.init({
         server: {
             baseDir: './dist'
@@ -89,7 +97,8 @@ gulp.task('default', gulp.parallel(html, scss, images, fonts, function(done) {
     });
 
     gulp.watch('app/**/*.scss', scss);
-   // gulp.watch('src/**/*.js', js);
+    gulp.watch('app/*.html', html);
+//    gulp.watch('src/**/*.js', js);
 
     done();
 

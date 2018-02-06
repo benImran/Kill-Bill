@@ -1,7 +1,70 @@
 /* Mettre les @media dans ce fichier */
 
 @mixin breakpoint($point) {
-  @if $point == mobile {
+  // @if $point == old-phone {
+  //   @media (min-width: 320px) and (max-width: 370px) { @content ; }
+  // }
+
+  // @if $point == small-phone {
+  //   @media (min-width : 370px) and (max-width : 480px)  { @content ; }
+  // }
+
+  // @if $point == for-phone-only {
+  //   @media (min-width: 480px) and (max-width: 599px) { @content ; }
+  // }
+
+  // @if $point == for-tablet-portrait-up {
+  //   @media (min-width: 600px) { @content ; }
+  // }
+
+  // @if $point == for-tablet-landscape-up {
+  //   @media (min-width: 900px) { @content ; }
+  // }
+
+  // @if $point == small-desktop {
+  //   @media (min-width: 1024px) { @content ; } 
+  // }
+
+  // @if $point == for-desktop-up {
+  //   @media (min-width: 1200px) { @content ; }
+  // }
+
+
+  @if $point == iphone-5 {
+    @media (max-width: 320px) { @content ; } 
+
+    }
+
+  @if $point == iphone-6 {
+    @media (min-width: 375px) { @content ; } 
+  }
+  
+  @if $point == iphone-8plus {
+    @media (min-width: 414px) { @content ; } 
+  }
+  
+  @if $point == small-tab {
+    @media (min-width: 500px) { @content ; } 
+  }
+
+  @if $point == ipad {
+    @media (min-width: 768px) and (max-width : 1024px) { @content ; } 
+  }
+
+  @if $point == ipad-large {
     @media (min-width: 800px) { @content ; }
   }
+
+  @if $point == small-desk {
+    @media (min-width: 1180px) { @content ; }
+  }
+
+  @if $point == macbook {
+    @media (min-width: 1480px) and (min-height: 900) { @content ; } 
+  }
+
+  @if $point == desktop {
+    @media (min-width: 1680px) and (min-height: 1050) { @content ; } 
+  }
+    
 }

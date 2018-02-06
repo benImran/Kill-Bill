@@ -1,0 +1,91 @@
+.btnInfos:nth-child(2) {
+  display: flex;
+  font-size: 22px;
+  flex-flow: row wrap;
+  align-items: center;
+  
+  @include breakpoint(ipad-large) {
+    flex-direction: row-reverse;
+  }
+}
+
+.btnInfos__trackTitle {
+  font-size: 22px;
+  font-family: $fontblackitalic;
+  padding-right: 20px;
+  margin-right: 20px;
+  padding-bottom: 5px;
+  color: $black;
+
+  @include breakpoint(ipad-large) {
+    margin-right: 20px;
+    overflow: hidden;
+    width: 300px;
+    font-size: 22px;
+    text-align: left; 
+    white-space: nowrap;
+  }
+}
+
+.btnInfos__trackArtist--blackBlock {
+  text-align: right;
+}
+
+.btnInfos__trackTitle--white {
+  color: $white;
+  text-align: right;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.btnInfos__trackArtist {
+  font-size: 17px;
+  font-family: $fontregular;
+  color: $red-st;
+
+  @include breakpoint(ipad-large) {
+    font-size: 19px;
+  }
+}
+
+.btnInfos__trackArtist--firstBlock {
+  @include breakpoint(ipad-large) {
+    margin-left: 2vw;
+    font-size: 19px;
+    text-align: right;    
+  }
+}
+
+.btnInfos__rank {
+  font-size: 36px;
+  font-family: $fontsemibold;
+  color: $black;
+}
+
+.btnInfos__rank--yellow {
+  color: $yellow-darkened;
+}
+
+.btnInfos__rank--white {
+  @include breakpoint(ipad-large) {
+    color: $white;
+  }
+}
+
+.btnInfos__arrow {
+  padding-left: 30px;
+  padding-right: 20px;
+
+  @include breakpoint(ipad-large) {
+    display: none;
+  }
+}
+
+.btnInfos__arrow--desktop {
+  display: none;
+
+  @include breakpoint(ipad-large) {
+    display: block;
+    padding-right: 68px;    
+  }
+}

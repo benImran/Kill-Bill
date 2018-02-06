@@ -1,0 +1,35 @@
+.homepage {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  // position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.homepage__scroller {
+  color: $dark-blue;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+
+  &::after {
+    content: '';
+    height: 30px;
+    border-left: 1.5px solid $dark-blue;
+  }
+
+  p {
+    line-height: 40px;
+  }
+}
+
+.homepage__scroller--hidden {
+  display: none;
+}

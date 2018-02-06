@@ -1,0 +1,25 @@
+//burger
+.burger {
+    display: none;
+    visibility: collapse;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background-color: $yellow-style;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: $fontsemibold;
+    font-size: 32px;
+    text-transform: uppercase;
+
+    li:first-child {
+        margin-bottom: 42px;
+    }
+}

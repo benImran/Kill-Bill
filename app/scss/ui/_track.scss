@@ -1,0 +1,65 @@
+.track {
+  display: block;
+  padding: 20vh 0;
+  width: 100vw;
+  height: 100%;
+  background-color: $dark-blue;
+  color: $white;
+  text-align: left;
+}
+
+.track__infos {
+  margin-top: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+  transition-property: margin-top;
+  transition-duration: .5s;
+  transition-delay: 0s;
+
+  @include breakpoint(ipad-large) {
+    margin: 0 auto;
+    max-width: 590px;
+  }
+}
+
+.track__infos--move {
+  margin-top: -50vh;
+  transition-property: margin-top;
+  transition-duration: 2s;
+  transition-delay: .65s;
+}
+
+.track__infos--visible {
+  margin-top: -90vh;
+  transition-property: margin-top;
+  transition-duration: 1.3s;
+  transition-timing-function: cubic-bezier(0,.97,.48,1);
+  transition-delay: 0s;
+}
+
+.track__infosTitle {
+  position: relative;
+  margin-top: 173px;
+  padding-left: 50px;
+  color: $yellow-style;
+  font-family: $fontsemibold;
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 34px;
+    height: 3px;
+    background-color: $yellow-st;
+  }
+}
+
+.track__infosText {
+  margin-top: 24px;
+  color: $white;
+  font-family: $fontmedium;
+  font-size: 22px;
+  line-height: 32px;
+}

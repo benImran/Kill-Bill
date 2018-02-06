@@ -1,0 +1,196 @@
+.player {
+  position: relative;
+  transform: translateY(0);
+  margin-top: 0;
+  padding: 0 10%;
+  width: 100%;
+  transition-property: margin-top, transform;
+  transition-duration: 1s, 1s;
+  transition-timing-function: cubic-bezier(.25,.1,.25,1);
+  transition-delay: .22s;
+}
+
+.player--hidden {
+  margin-top: -30vh;
+  transform: translateY(-60vh);
+
+  @include breakpoint(ipad-large) {
+      transform: translateY(-40vh);
+    }
+}
+
+.player__infos {
+  transform: translateY(0);
+  transition-property: transform;
+  transition-duration: .65s;
+}
+
+.player__infos--hidden {
+  transform: translateY(-50vh);
+
+  @include breakpoint(iphone-8plus) {
+    transform: translateY(-47vh);
+  }
+  
+  @include breakpoint(small-tab) {
+    transform: translateY(-42vh);
+  }
+  
+  @include breakpoint(ipad-large) {
+    transform: translateY(-38vh);
+  }
+
+}
+
+.player__title {
+  margin-bottom: 10px;
+  color: $white;
+  font-family: $fontextrabolditalic;
+  font-size: 33px;
+  line-height: 48px;
+}
+
+.player__artist {
+  color: $red-style;
+  font-size: 27px;
+}
+
+.player__rank {
+  margin-top: 73px;
+  text-align: center;
+}
+
+.player__rankPosition {
+  display: block;
+  color: $white;
+  font-family: $fontsemibold;
+  font-size: 72px;
+}
+
+.player__rankTotal {
+  position: relative;
+  margin-top: 54px;
+  opacity: 0.6;
+  font-family: $fontregular;
+  font-size: 16px;
+  font-style: italic;
+
+  &::before {
+    content: '';
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    height: 30px;
+    border-left: 1.5px solid $white;
+  }
+}
+
+.player__cover {
+  z-index: 9;
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  width: 40vw;
+  height: 40vw;
+  overflow: hidden;
+  background-color: $yellow-style;
+  transition-property: top;
+  transition-duration: 1.1s;
+  transition-delay: .0s;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: $yellow-style;
+    z-index: 99;
+    transition-property: width;
+    transition-duration: .5s;
+    transition-delay: 0s;
+  }
+ 
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 0;
+    z-index: 99;
+    background-color: $red-st;
+  }
+
+  @include breakpoint(iphone-8plus) {
+    width: 40vw;
+    height: 40vw;
+  }
+  
+  @include breakpoint(small-tab) {
+    width: 40vw;
+    height: 40vw;
+  }
+  
+  @include breakpoint(ipad-large) {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+.player__cover--active {
+  top: calc(-50vh - 30px);
+  transition-property: top;
+  transition-duration: 1.1s;
+  transition-delay: .6s;
+  width: 40vw;
+  height: 40vw;
+
+  &::before {
+    width: 0;
+    transition-property: width;
+    transition-duration: .1s;
+    transition-delay: 2.5s;
+  }
+
+  &::after {
+    animation: coverFade 1.5s;
+    animation-delay: 1.7s;
+
+    @keyframes coverFade {
+      40% {
+        width: 100%;
+      }
+      60% {
+        width: 100%;
+      }
+      100% {
+        width: 0;
+      } 
+    }
+  }
+
+  @include breakpoint(iphone-8plus) {
+    top: calc(-50vh - 20px);
+    width: 40vw;
+    height: 40vw;
+  }
+  
+  @include breakpoint(small-tab) {
+    top: calc(-50vh + 20px);
+  }
+  
+  @include breakpoint(ipad-large) {
+    top: -42vh;
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+.player__coverAlbum {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
