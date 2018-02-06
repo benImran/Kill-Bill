@@ -48,7 +48,7 @@ function html() {
  */
 // TODO: GULP PATH FOR JS
 function js() {
-    return browserify({entries: ['app/**/*.js'], debug: true})
+    return browserify({entries: ['app/js/main.js'], debug: true})
         .transform(babelify, {presets: 'es2015'})
         .bundle()
         .pipe(source('main.js'))
@@ -87,9 +87,9 @@ function clean() {
 
 
 // TODO: ADD GULP JS TO PARALLEL
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, css, images, fonts )));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, css, images, fonts, js)));
 
-gulp.task('default', gulp.parallel(html, scss, css, images, fonts, function(done) {
+gulp.task('default', gulp.parallel(html, scss, css, images, fonts, js, function(done) {
     sync.init({
         server: {
             baseDir: './dist'
@@ -98,7 +98,7 @@ gulp.task('default', gulp.parallel(html, scss, css, images, fonts, function(done
 
     gulp.watch('app/**/*.scss', scss);
     gulp.watch('app/*.html', html);
-//    gulp.watch('src/**/*.js', js);
+    gulp.watch('app/**/*.js', js);
 
     done();
 

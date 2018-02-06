@@ -126,8 +126,8 @@
         </div>
         <div class="trackList"></div>
         <!--build:js js/main.min.js -->
-        <script src="js/main.js"></script>
-        <script>
+        <script src="./js/main.js"></script>
+        <!-- <script>
             const wrapper = document.querySelector('.wrapper');
             const body = document.querySelector('body');
             const nav = document.querySelector('.nav');
@@ -158,15 +158,16 @@
             });
 
             body.addEventListener('click', () => {
-                fetch('content-page.json')
-                    .then(function (response) {
-                        console.log(response);
-                        return response.blob();
-                    })
-                    .then(function (myBlob) {
-                        console.log(myBlob);
-                    });
-                console.log(track);
+                "use strict";
+                // var require = function (_require) { 
+                //     console.log(JSON.parse('./js/content-page.json'));
+                //     JSON.parse('./js/content-page.json');
+                // };
+                // json = JSON.parse(fs.readFileSync('./js/content-page.json'));
+                // console.log(json);
+                fetch('./content-page.json')
+                    .then(console.log)
+                    .then(console.log)
             });
 
             nextTrack.addEventListener('click', () => {
@@ -271,7 +272,7 @@
                         }, 100);
                     }
                 }
-            });
+            }); -->
         </script>
         <!-- endbuild -->
     </body>
