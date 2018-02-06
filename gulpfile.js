@@ -22,7 +22,7 @@ let isProd = process.env.NODE_ENV === 'production';
  * SCSS
  */
 function scss() {
-    return gulp.src('app/scss/**/*.scss')
+    return gulp.src('app/scss/styles.scss')
         .pipe(gulpif(!isProd, sourcemaps.init()))
         .pipe(sass())
         .pipe(gulpif(isProd, minifyCSS()))
@@ -31,11 +31,6 @@ function scss() {
         .pipe(sync.stream());
 }
 
-function css() {
-    gulp.src('dist/**/*.css')
-        .pipe(pxtorem())
-        .pipe(gulp.dest('dist/css/'));
-}
 
 function html() {
     return gulp.src('app/**/*.html')
