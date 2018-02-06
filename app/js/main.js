@@ -15,7 +15,6 @@ const trackInfos = document.querySelector('.track__infos');
 const mobileNextBtn = document.querySelector('.changeTrack');
 const prevTrack = document.querySelector('.changeTrack__prev');
 const nextTrack = document.querySelector('.changeTrack__next');
-// const tracks = JSON.parse(contentPage).tracks;
 let touchStart = 0;
 let indic = 0;
 
@@ -35,6 +34,14 @@ const trackRank = document.querySelector('.player__rankPosition');
 const trackText = document.querySelector('.track__infosText');
 const nextBtnRank = document.querySelector('.btnInfos__rank--white');
 const prevBtnRank = document.querySelector('.btnInfos__rank--yellow');
+let allow = true;
+
+body.addEventListener('mousewheel', ({deltaY}) => {
+    setTimeout(() => {
+        deltaY > 0 && moveDown();
+        deltaY < 0 && moveUp();
+    }, 200);
+});
 
 prevTrack.addEventListener('click', () => {
     const tracks = JSON.parse(contentPage).tracks;
@@ -52,7 +59,6 @@ prevTrack.addEventListener('click', () => {
             if(indic = 0){
                 nextBtnRank.innerHTML = 12;
             }
-            console.log(indic);
         }
     });
     indic--;
@@ -60,7 +66,6 @@ prevTrack.addEventListener('click', () => {
 });
 
 nextTrack.addEventListener('click', () => {
-    console.log('ree');
     const tracks = JSON.parse(contentPage).tracks;
     
     if(indic === 11){
@@ -68,7 +73,6 @@ nextTrack.addEventListener('click', () => {
     }
     tracks.map((track, key) => {
         if (key === indic + 1) {
-            console.log(trackText, track.description);
             trackTitle.innerHTML = track.titre;
             trackArtist.innerHTML = track.artiste;
             trackRank.innerHTML = track.rank;
@@ -80,109 +84,11 @@ nextTrack.addEventListener('click', () => {
     resetPage();
 });
 
-body.addEventListener('scroll', (evt) => {
-    
-});
-
 
 body.addEventListener('touchend', (evt) => {
     const touchEnd = evt.changedTouches[0].clientY;
-    if (touchStart > touchEnd) {
-        if (wrapper.classList.contains('wrapper--homepage')) {
-            burger.classList.add('nav__burger--visible');
-            homeScroller.classList.add('homepage__scroller--hidden');
-            cover.classList.add('overview__albumCover--move');
-            vinyle.classList.add('overview__albumVinyle--move');
-            movingBlock.classList.add('movingBlock--move');
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--trackInfosVisible');
-                wrapper.classList.add('wrapper--trackInfosHidden');
-                movingBlock.classList.add('movingBlock--fixed');
-            }, 1200);
-        }
-
-        if (wrapper.classList.contains('wrapper--trackInfosVisible')) {
-            console.log('uyt');
-            wrapper.classList.add('wrapper--playerHidden');
-            movingBlock.classList.add('movingBlock--hidden');
-            trackInfos.classList.add('track__infos--move');
-            playerInfos.classList.add('player__infos--hidden');
-            playerCover.classList.add('player__cover--active');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--trackInfosHidden');
-                wrapper.classList.add('wrapper--trackInfosVisible');
-                wrapper.classList.add('wrapper--playerVisible');
-                burger.classList.add('nav__burger--visible');
-                homeScroller.classList.add('homepage__scroller--hidden');
-                player.classList.add('player--active');
-                cover.classList.add('overview__albumCover--move');
-                vinyle.classList.add('overview__albumVinyle--move');
-                movingBlock.classList.add('movingBlock--move');
-                movingBlock.classList.add('movingBlock--fixed');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--playerVisible')) {
-            wrapper.classList.remove('wrapper--changeTrackHidden');
-            trackInfos.classList.add('track__infos--visible');
-            player.classList.add('player--hidden');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--trackInfosHidden');
-                wrapper.classList.add('wrapper--changeTrackHidden');
-                wrapper.classList.add('wrapper--changeTrackMove');
-                wrapper.classList.add('wrapper--playerVisible');
-                wrapper.classList.remove('wrapper--trackInfos');
-                trackInfos.classList.add('track__infos--move');
-                player.classList.add('player--active');
-                playerInfos.classList.add('player__infos--hidden');
-                playerCover.classList.add('player__cover--active');
-                mobileNextBtn.classList.add('changeTrack__btn--move');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--changeTrackMove')) {
-            mobileNextBtn.classList.add('changeTrack__btn--visible');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--changeTrackHidden');
-                wrapper.classList.add('wrapper--changeTrackVisible');
-            }, 100);
-        }
-    }
-    if (touchStart < touchEnd) {
-        if (wrapper.classList.contains('wrapper--trackInfosHidden')) {
-
-        }
-        if (wrapper.classList.contains('wrapper--trackInfos')) {
-            trackInfos.classList.remove('track__infos--visible');
-            trackInfos.classList.remove('track__infos--move');
-            player.classList.remove('player--active');
-            playerInfos.classList.remove('player__infos--hidden');
-            playerCover.classList.remove('player__cover--active');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--playerVisible');
-                wrapper.classList.add('wrapper--trackInfosHidden');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--playerHidden')) {
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--trackInfos');
-            }, 1000);
-        }
-        if (wrapper.classList.contains('wrapper--changeTrackHidden')) {
-            wrapper.classList.remove('wrapper--changeTrackMove');
-            trackInfos.classList.remove('track__infos--visible');
-            player.classList.remove('player--hidden');
-            player.classList.add('player--disactive');
-            mobileNextBtn.classList.remove('changeTrack__btn--move');
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--playerHidden');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--changeTrackVisible')) {
-            mobileNextBtn.classList.remove('changeTrack__btn--visible');
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--changeTrackHidden');
-            }, 100);
-        }
-    }
+    touchStart > touchEnd && moveDown();
+    touchStart < touchEnd && moveUp();
 });
 
 function resetPage() {
@@ -210,104 +116,103 @@ function resetPage() {
     setTimeout(() => {
         wrapper.classList.add('wrapper--changeTrackHidden');
     }, 100);
+    setTimeout(() => {
+        allow = true;
+    }, 2000);
 };
 
-function movePage() {
-    if (touchStart > touchEnd) {
-        if (wrapper.classList.contains('wrapper--homepage')) {
+function moveDown(){
+    allow = false;    
+    if (wrapper.classList.contains('wrapper--homepage')) {
+        burger.classList.add('nav__burger--visible');
+        homeScroller.classList.add('homepage__scroller--hidden');
+        cover.classList.add('overview__albumCover--move');
+        vinyle.classList.add('overview__albumVinyle--move');
+        movingBlock.classList.add('movingBlock--move');
+        setTimeout(() => {
+            wrapper.classList.add('wrapper--trackInfosVisible');
+            wrapper.classList.add('wrapper--trackInfosHidden');
+            movingBlock.classList.add('movingBlock--fixed');
+        }, 1200);
+    }
+
+    if (wrapper.classList.contains('wrapper--trackInfosVisible')) {
+        wrapper.classList.add('wrapper--playerHidden');
+        movingBlock.classList.add('movingBlock--hidden');
+        trackInfos.classList.add('track__infos--move');
+        playerInfos.classList.add('player__infos--hidden');
+        playerCover.classList.add('player__cover--active');
+        setTimeout(() => {
+            wrapper.classList.remove('wrapper--trackInfosHidden');
+            wrapper.classList.add('wrapper--trackInfosVisible');
+            wrapper.classList.add('wrapper--playerVisible');
             burger.classList.add('nav__burger--visible');
             homeScroller.classList.add('homepage__scroller--hidden');
+            player.classList.add('player--active');
             cover.classList.add('overview__albumCover--move');
             vinyle.classList.add('overview__albumVinyle--move');
             movingBlock.classList.add('movingBlock--move');
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--trackInfosVisible');
-                wrapper.classList.add('wrapper--trackInfosHidden');
-                movingBlock.classList.add('movingBlock--fixed');
-            }, 1200);
-        }
-
-        if (wrapper.classList.contains('wrapper--trackInfosVisible')) {
-            console.log('uyt');
-            wrapper.classList.add('wrapper--playerHidden');
-            movingBlock.classList.add('movingBlock--hidden');
+            movingBlock.classList.add('movingBlock--fixed');
+        }, 1600);
+    }
+    if (wrapper.classList.contains('wrapper--playerVisible')) {
+        wrapper.classList.remove('wrapper--changeTrackHidden');
+        trackInfos.classList.add('track__infos--visible');
+        player.classList.add('player--hidden');
+        setTimeout(() => {
+            wrapper.classList.remove('wrapper--trackInfosHidden');
+            wrapper.classList.add('wrapper--changeTrackHidden');
+            wrapper.classList.add('wrapper--changeTrackMove');
+            wrapper.classList.add('wrapper--playerVisible');
+            wrapper.classList.remove('wrapper--trackInfos');
             trackInfos.classList.add('track__infos--move');
+            player.classList.add('player--active');
             playerInfos.classList.add('player__infos--hidden');
             playerCover.classList.add('player__cover--active');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--trackInfosHidden');
-                wrapper.classList.add('wrapper--trackInfosVisible');
-                wrapper.classList.add('wrapper--playerVisible');
-                burger.classList.add('nav__burger--visible');
-                homeScroller.classList.add('homepage__scroller--hidden');
-                player.classList.add('player--active');
-                cover.classList.add('overview__albumCover--move');
-                vinyle.classList.add('overview__albumVinyle--move');
-                movingBlock.classList.add('movingBlock--move');
-                movingBlock.classList.add('movingBlock--fixed');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--playerVisible')) {
-            wrapper.classList.remove('wrapper--changeTrackHidden');
-            trackInfos.classList.add('track__infos--visible');
-            player.classList.add('player--hidden');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--trackInfosHidden');
-                wrapper.classList.add('wrapper--changeTrackHidden');
-                wrapper.classList.add('wrapper--changeTrackMove');
-                wrapper.classList.add('wrapper--playerVisible');
-                wrapper.classList.remove('wrapper--trackInfos');
-                trackInfos.classList.add('track__infos--move');
-                player.classList.add('player--active');
-                playerInfos.classList.add('player__infos--hidden');
-                playerCover.classList.add('player__cover--active');
-                mobileNextBtn.classList.add('changeTrack__btn--move');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--changeTrackMove')) {
-            mobileNextBtn.classList.add('changeTrack__btn--visible');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--changeTrackHidden');
-                wrapper.classList.add('wrapper--changeTrackVisible');
-            }, 100);
-        }
+            mobileNextBtn.classList.add('changeTrack__btn--move');
+        }, 1600);
     }
-    if (touchStart < touchEnd) {
-        if (wrapper.classList.contains('wrapper--trackInfosHidden')) {
+    if (wrapper.classList.contains('wrapper--changeTrackMove')) {
+        mobileNextBtn.classList.add('changeTrack__btn--visible');
+        setTimeout(() => {
+            wrapper.classList.remove('wrapper--changeTrackHidden');
+            wrapper.classList.add('wrapper--changeTrackVisible');
+        }, 1600);
+    }
+}
 
-        }
-        if (wrapper.classList.contains('wrapper--trackInfos')) {
-            trackInfos.classList.remove('track__infos--visible');
-            trackInfos.classList.remove('track__infos--move');
-            player.classList.remove('player--active');
-            playerInfos.classList.remove('player__infos--hidden');
-            playerCover.classList.remove('player__cover--active');
-            setTimeout(() => {
-                wrapper.classList.remove('wrapper--playerVisible');
-                wrapper.classList.add('wrapper--trackInfosHidden');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--playerHidden')) {
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--trackInfos');
-            }, 1000);
-        }
-        if (wrapper.classList.contains('wrapper--changeTrackHidden')) {
-            wrapper.classList.remove('wrapper--changeTrackMove');
-            trackInfos.classList.remove('track__infos--visible');
-            player.classList.remove('player--hidden');
-            player.classList.add('player--disactive');
-            mobileNextBtn.classList.remove('changeTrack__btn--move');
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--playerHidden');
-            }, 100);
-        }
-        if (wrapper.classList.contains('wrapper--changeTrackVisible')) {
-            mobileNextBtn.classList.remove('changeTrack__btn--visible');
-            setTimeout(() => {
-                wrapper.classList.add('wrapper--changeTrackHidden');
-            }, 100);
-        }
+function moveUp(){
+    if (wrapper.classList.contains('wrapper--trackInfos')) {
+        trackInfos.classList.remove('track__infos--visible');
+        trackInfos.classList.remove('track__infos--move');
+        player.classList.remove('player--active');
+        playerInfos.classList.remove('player__infos--hidden');
+        playerCover.classList.remove('player__cover--active');
+        setTimeout(() => {
+            wrapper.classList.remove('wrapper--playerVisible');
+            wrapper.classList.add('wrapper--trackInfosHidden');
+        }, 1600);
+    }
+    if (wrapper.classList.contains('wrapper--playerHidden')) {
+        setTimeout(() => {
+            wrapper.classList.add('wrapper--trackInfos');
+        }, 1600);
+    }
+    if (wrapper.classList.contains('wrapper--changeTrackHidden')) {
+        wrapper.classList.remove('wrapper--changeTrackMove');
+        trackInfos.classList.remove('track__infos--visible');
+        player.classList.remove('player--hidden');
+        player.classList.add('player--disactive');
+        mobileNextBtn.classList.remove('changeTrack__btn--move');
+        setTimeout(() => {
+            wrapper.classList.add('wrapper--playerHidden');
+        }, 1600);
+    }
+    if (wrapper.classList.contains('wrapper--changeTrackVisible')) {
+        mobileNextBtn.classList.remove('changeTrack__btn--visible');
+        setTimeout(() => {
+            wrapper.classList.add('wrapper--changeTrackHidden');
+        }, 1600);
     }
 }
 
