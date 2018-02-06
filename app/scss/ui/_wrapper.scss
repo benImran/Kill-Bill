@@ -1,0 +1,27 @@
+.wrapper, .track {
+  background-color: $dark-blue;
+  font-family: $Barlow-cond;
+  text-align: center;
+  height: auto;
+  position: relative;
+}
+
+.wrapper {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  // overflow: hidden;
+  transition: 1s;  
+}
+
+.wrapper--trackInfosVisible {
+  // overflow: visible;
+  position: relative;
+  top: -100vh;
+}
+
+.wrapper--trackPlayerVisible {
+  // overflow: visible;
+  position: relative;
+  top: -200vh;
+}

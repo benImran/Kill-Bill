@@ -1,0 +1,130 @@
+//Nav
+
+.nav {
+  position: fixed;
+  top: 25px;
+  right: 20px;
+	z-index: 4;
+	width: 10%;
+	height: 5%;
+	transition: 3s;
+	
+	&::before {
+		content: "";
+		display: block;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 5%;
+		height: 5%;
+		transition: .3s;
+	}
+}
+
+.nav--active {
+	&::before {
+		content: "";
+		display: block;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $yellow-style;
+	}
+}
+
+.nav__list {
+	display: none;
+	position: relative;
+	right: 90px;
+  	
+	a {
+    margin-right: 60px;
+		font-size: 20px;
+    color: $yellow-style;
+		font-family: $fontsemibold;
+		text-transform: uppercase;
+	}
+	@include breakpoint(ipad-large) {
+		display: flex;
+	}
+}
+
+.nav__list--active {
+	display: flex;
+	flex-direction: column;
+	transform: translateY(-50%);
+	position: fixed;
+	top: 50%;
+	left: 0;
+	right: 0;
+	width: 100%;
+
+	li{
+		margin-top: 15px;
+		margin-bottom: 15px;
+
+		a {
+			margin: 0;
+			opacity: 1;
+			color: $dark-blue;
+			font-size: 30px;
+			animation: navList .5s;
+
+			@keyframes navList {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.nav__burger {
+	width: 30px;
+	height: 3px;
+	background: $yellow-style;
+	transition: .3s;
+	opacity: 0;
+
+	&::before {
+		content: "";
+		display: block;
+		position: relative;
+		top: 12px;
+		width: 30px;
+		height: 3px;
+		background-color: $yellow-style;
+		transition: .3s;
+	}
+
+	@include breakpoint(ipad-large) {
+			display: none;
+	}
+}
+
+.nav__burger--visible {
+	opacity: 1;
+	transition-property: opacity, transform;
+	transition-duration: .3s, .3s;
+	transition-delay: 1.5s, 0s;
+}
+
+.nav__burger--active {
+	transform: rotate(-312deg);
+	position: relative;
+	top: 5px;
+	z-index: 5;
+	background-color: $dark-blue;
+
+	&::before {
+		transform: rotate(265deg);
+		top: 0px;
+		background-color: $dark-blue;
+	}
+}

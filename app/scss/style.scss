@@ -1,12 +1,21 @@
 //TOOLS
+@import "tools/variables";
 @import "tools/reset";
+@import "tools/layout";
 @import "tools/mixins";
 @import "tools/fonts";
-@import "tools/variable";
 
 //UI
-@import "ui/header";
+@import "ui/wrapper";
+@import "ui/nav";
 @import "ui/page";
+@import "ui/homepage";
+@import "ui/overview";
+@import "ui/movingBlock";
+@import "ui/track";
+@import "ui/player";
+@import "ui/changeTrack";
+@import "ui/btnInfos";
 @import "ui/burger";
 
 

@@ -11,121 +11,270 @@
     <link rel="stylesheet" href="css/style.css">
     <!--endbuild-->
 </head>
-<body class="homepage">
-    <header>
-        <div class="burger-menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="13" viewBox="0 0 26 13">
-                <g fill="#FFC100" fill-rule="evenodd">
-                    <rect width="26" height="3"/>
-                    <rect width="26" height="3" y="10"/>
-                </g>
-            </svg>
-        </div>
-        <div class="burger-menu burger-menu--desktop">
-            <a href="index.html">home</a>
-            <a href="tracklist.html">index</a>
-        </div>
-    </header>
-    <main>
-        <div class="homepage-container">
-            <div class="form-container"> <!-- triangle -->
-            </div>
-            <div class="title-container">
-                <h1 class="title title--yellow">kill</h1>
-                <div class="vinyl-anim">
-                    <img class="vinyl-anim__pochette" src="img/pochette.png" alt=" ">
-                    <img class="vinyl-anim__vinyle" src="img/vinyle.png" alt=" ">
+<body>
+    <div class="wrapper wrapper--homepage">
+        <header>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="tracklist.html">index</a></li>
+                </ul>
+                <div class="nav__burger"></div>
+            </nav>
+        </header>
+        <main>
+            <div class="homepage">
+                <div class="homepage__overview">
+                    <div class="overview">
+                        <h1 class="overview__title">
+                            <span class="overview__titleText overview__titleText--yellow">kill</span>
+                            <span class="overview__titleText overview__titleText--darkBlue">bill</span>
+                        </h1>
+                        <div class="overview__album">
+                            <img class="overview__albumCover" src="img/pochette.png" alt="album cover">
+                            <img class="overview__albumVinyle" src="img/vinyle.png" alt="vinyle">
+                        </div>
+                    </div>
                 </div>
-                <h1 class="title title--black">bill</h1>
+                <div class="homepage__scroller">
+                    <p>Scrollez pour explorer le vinyle</p>
+                </div>
             </div>
-            <div class="container-bottom">
-                <p>Scrollez pour explorer le vinyle</p>
-            </div>
-        </div>
-        <div class="js content-vinyl">
-            <h2 class="js title-song">
-                Bang Bang - My baby shot me down
-            </h2>
-            <p class="title-song--red js-name-artist">
-                Nancy Sinatra
-            </p>
-            <div class="js-container-number">
-                <p class="js-container-number__first">01</p>
-                <p class="container-number__grey">sur 12</p>
-            </div>
-            <div class="square-cover">
-            </div>
-            <div class="content-track">
-                <h3 class="content-track__title">A propos de ce morceau</h3>
-                <p class="js-content-track__about">
-                    Tarantino est un vrai fan de musique, et il le prouve encore avec la bande originale de Kill Bill. Perverse et malicieuse, elle sublime les instants magiques de ce film de sabre avec des morceaux judicieusement choisis. De l’énorme Bang Bang, susurré par Nancy Sinatra, à la flûte de pan de Gheorghe Zamfir dans The Lonely Shepherd, chaque morceau, aussi décalé soit-il, possède une force dramatique qui renforce les scènes du film.
-                </p>
-            </div>
-        </div>
-        <div class="choose-tracks">
-            <a href="#" class="track-link track-link--desktop track-link--black-reversed">
-                <div class="track-link__track-infos">
-                    <p class="track-link__track-title track-link__track-title--white">
-                        That Certain Female
-                    </p>
-                    <p class="track-link__artist">
-                        Charlie Feathers
+            <div class="movingBlock"></div>
+            <div class="track">
+                <div class="player">
+                    <div class="player__infos">
+                        <h2 class="player__title">Bang Bang - My baby shot me down</h2>
+                        <h3 class="player__artist">Nancy Sinatra</h3>
+                        <div class="player__rank">
+                            <p class="player__rankPosition">01</p>
+                            <p class="player__rankTotal">12</p>
+                        </div>
+                    </div>
+                    <div class="player__cover">
+                        <img src="img/pochette.png" class="player__coverAlbum" alt="album cover">
+                    </div>
+
+                </div>
+                <div class="track__infos">
+                    <h3 class="track__infosTitle">A propos de ce morceau</h3>
+                    <p class="track__infosText">Tarantino est un vrai fan de musique, 
+                        et il le prouve encore avec la bande originale de Kill Bill. 
+                        Perverse et malicieuse, elle sublime les instants magiques 
+                        de ce film de sabre avec des morceaux judicieusement choisis. 
+                        De l’énorme Bang Bang, susurré par Nancy Sinatra, 
+                        à la flûte de pan de Gheorghe Zamfir dans The Lonely Shepherd, 
+                        chaque morceau, aussi décalé soit-il, 
+                        possède une force dramatique qui renforce les scènes du film.
                     </p>
                 </div>
-                <div class="track-link__track-infos">
-                    <p class="track-link__track-number track-link__track-number--yellow">02</p>
-                    <div class="track-link__arrow track-link__arrow--desktop track-link__arrow--white">
-                        <svg width="17px" height="28px" viewBox="0 0 17 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Desktop-HD-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-68.000000, -1265.000000)">
-                                <g id="Group-2" transform="translate(50.000000, 1238.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                    <g id="Group-6">
-                                        <g id="ic_keyboard_arrow_right_black_24px-(2)" transform="translate(27.000000, 41.000000) scale(-1, 1) rotate(360.000000) translate(-27.000000, -41.000000) translate(0.000000, 13.000000)">
-                                            <polygon id="Shape" points="19.3275 38.5352 29.6325 28.07 19.3275 17.6048 22.5 14.39 36 28.07 22.5 41.75"></polygon>
+            </div>
+            <div class="changeTrack">
+                <div class="changeTrack__btn changeTrack__btn--desktop changeTrack__prev changeTrack__btn--blackReversed">
+                    <div class="btnInfos">
+                        <p class="btnInfos__trackTitle btnInfos__trackTitle--white">That Certain Female</p>
+                        <p class="btnInfos__trackArtist btnInfos__trackArtist--firstBlock">Charlie Feathers</p>
+                    </div>
+                    <div class="btnInfos">
+                        <p class="btnInfos__rank btnInfos__rank--yellow">02</p>
+                        <div class="btnInfos__arrow btnInfos__arrow--desktop btnInfos__arrow--white">
+                            <svg width="17px" height="28px" viewBox="0 0 17 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Desktop-HD-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-68.000000, -1265.000000)">
+                                    <g id="Group-2" transform="translate(50.000000, 1238.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                        <g id="Group-6">
+                                            <g id="ic_keyboard_arrow_right_black_24px-(2)" transform="translate(27.000000, 41.000000) scale(-1, 1) rotate(360.000000) translate(-27.000000, -41.000000) translate(0.000000, 13.000000)">
+                                                <polygon id="Shape" points="19.3275 38.5352 29.6325 28.07 19.3275 17.6048 22.5 14.39 36 28.07 22.5 41.75"></polygon>
+                                            </g>
                                         </g>
                                     </g>
                                 </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-            </a>
-            <a href="#" class="track-link">
-                <div class="track-link__track-infos">
-                    <p class="track-link__track-title">
-                        Bang Bang - My baby shot me down
-                    </p>
-                    <p class="track-link__artist">
-                        Charlie Feathers
-                    </p>
-                </div>
-                <div class="track-link__track-infos">
-                    <p class="track-link__track-number">02</p>
-                    <div class="track-link__arrow">
-                        <svg width="59px" height="9px" viewBox="0 0 59 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="iPhone-8-Copy-11" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-297.000000, -735.000000)">
-                                <g id="Group-4" transform="translate(0.000000, 653.000000)" stroke="#0C101C">
-                                    <g id="Group-3" transform="translate(297.000000, 82.000000)">
-                                        <path d="M0.5,4.5 L57.5,4.5" id="Line" stroke-linecap="square"></path>
-                                        <polyline id="Path-4" points="54.1540271 0.493062626 58.0384069 4.52558288 54.1540271 8.45906788"></polyline>
+                <div class="changeTrack__btn changeTrack__btn--mobile changeTrack__next">
+                    <div class="btnInfos">
+                        <p class="btnInfos__trackTitle">Bang Bang - My baby shot me down</p>
+                        <p class="btnInfos__trackArtist">Charlie Feathers</p>
+                    </div>
+                    <div class="btnInfos">
+                        <p class="btnInfos__rank btnInfos__rank--white">02</p>
+                        <div class="btnInfos__arrow">
+                            <svg width="59px" height="9px" viewBox="0 0 59 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="iPhone-8-Copy-11" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-297.000000, -735.000000)">
+                                    <g id="Group-4" transform="translate(0.000000, 653.000000)" stroke="#0C101C">
+                                        <g id="Group-3" transform="translate(297.000000, 82.000000)">
+                                            <path d="M0.5,4.5 L57.5,4.5" id="Line" stroke-linecap="square"></path>
+                                            <polyline id="Path-4" points="54.1540271 0.493062626 58.0384069 4.52558288 54.1540271 8.45906788"></polyline>
+                                        </g>
                                     </g>
                                 </g>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="track-link__arrow track-link__arrow--desktop">
-                        <svg width="17px" height="28px" viewBox="0 0 17 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="Desktop-HD-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1355.000000, -1265.000000)">
-                                <g id="ic_keyboard_arrow_right_black_24px-(2)" transform="translate(1363.000000, 1279.000000) rotate(360.000000) translate(-1363.000000, -1279.000000) translate(1336.000000, 1251.000000)" fill="#000000" fill-rule="nonzero">
-                                    <polygon id="Shape" points="19.3275 38.5352 29.6325 28.07 19.3275 17.6048 22.5 14.39 36 28.07 22.5 41.75"></polygon>
+                            </svg>
+                        </div>
+                        <div class="btnInfos__arrow btnInfos__arrow--desktop">
+                            <svg width="17px" height="28px" viewBox="0 0 17 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Desktop-HD-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1355.000000, -1265.000000)">
+                                    <g id="ic_keyboard_arrow_right_black_24px-(2)" transform="translate(1363.000000, 1279.000000) rotate(360.000000) translate(-1363.000000, -1279.000000) translate(1336.000000, 1251.000000)" fill="#000000" fill-rule="nonzero">
+                                        <polygon id="Shape" points="19.3275 38.5352 29.6325 28.07 19.3275 17.6048 22.5 14.39 36 28.07 22.5 41.75"></polygon>
+                                    </g>
                                 </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
+        </main>
+        <div class="trackList"></div>
         <!--build:js js/main.min.js -->
-        <script src="js/main.js"></script>
+        <script src="./js/main.js"></script>
+        <!-- <script>
+            const wrapper = document.querySelector('.wrapper');
+            const body = document.querySelector('body');
+            const nav = document.querySelector('.nav');
+            const burger = document.querySelector('.nav__burger');
+            const list = document.querySelector('.nav__list');
+            const homeScroller = document.querySelector('.homepage__scroller');
+            const bar = document.querySelector('.nav__burger');
+            const movingBlock = document.querySelector('.movingBlock');
+            const cover = document.querySelector('.overview__albumCover');
+            const vinyle = document.querySelector('.overview__albumVinyle');
+            const player = document.querySelector('.player');
+            const playerInfos = document.querySelector('.player__infos');
+            const playerCover = document.querySelector('.player__cover');
+            const trackInfos = document.querySelector('.track__infos');
+            const mobileNextBtn = document.querySelector('.changeTrack');
+            const prevTrack = document.querySelector('.changeTrack__prev');
+            const nextTrack = document.querySelector('.changeTrack__next');
+            let touchStart = 0;
+
+            burger.addEventListener('click', () => {
+                bar.classList.toggle('nav__burger--active');
+                list.classList.toggle('nav__list--active');
+                nav.classList.toggle('nav--active');
+            });
+
+            wrapper.addEventListener('touchstart', (evt) => {
+                touchStart = evt.touches[0].clientY;
+            });
+
+            body.addEventListener('click', () => {
+                "use strict";
+                // var require = function (_require) { 
+                //     console.log(JSON.parse('./js/content-page.json'));
+                //     JSON.parse('./js/content-page.json');
+                // };
+                // json = JSON.parse(fs.readFileSync('./js/content-page.json'));
+                // console.log(json);
+                fetch('./content-page.json')
+                    .then(console.log)
+                    .then(console.log)
+            });
+
+            nextTrack.addEventListener('click', () => {
+                console.log('yee');
+            });
+            
+            body.addEventListener('touchend', (evt) => {
+                const touchEnd = evt.changedTouches[0].clientY;
+                if(touchStart > touchEnd){
+                    if(wrapper.classList.contains('wrapper--homepage')){
+                        burger.classList.add('nav__burger--visible');
+                        homeScroller.classList.add('homepage__scroller--hidden');
+                        cover.classList.add('overview__albumCover--move');
+                        vinyle.classList.add('overview__albumVinyle--move');
+                        movingBlock.classList.add('movingBlock--move');
+                        setTimeout(() => {
+                            wrapper.classList.add('wrapper--trackInfosVisible');
+                            wrapper.classList.add('wrapper--trackInfosHidden');
+                            movingBlock.classList.add('movingBlock--fixed');
+                        }, 1200);
+                    }
+
+                    if(wrapper.classList.contains('wrapper--trackInfosVisible')){
+                        console.log('uyt');
+                        wrapper.classList.add('wrapper--playerHidden');
+                        movingBlock.classList.add('movingBlock--hidden');
+                        trackInfos.classList.add('track__infos--move');                        
+                        playerInfos.classList.add('player__infos--hidden');
+                        playerCover.classList.add('player__cover--active');
+                        setTimeout(() => {
+                            wrapper.classList.remove('wrapper--trackInfosHidden');
+                            wrapper.classList.add('wrapper--trackInfosVisible');
+                            wrapper.classList.add('wrapper--playerVisible');              
+                            burger.classList.add('nav__burger--visible');
+                            homeScroller.classList.add('homepage__scroller--hidden');
+                            player.classList.add('player--active');
+                            cover.classList.add('overview__albumCover--move');
+                            vinyle.classList.add('overview__albumVinyle--move');
+                            movingBlock.classList.add('movingBlock--move');
+                            movingBlock.classList.add('movingBlock--fixed');
+                        }, 100);
+                    }
+                    if(wrapper.classList.contains('wrapper--playerVisible')){
+                        wrapper.classList.remove('wrapper--changeTrackHidden');                        
+                        trackInfos.classList.add('track__infos--visible');
+                        player.classList.add('player--hidden');
+                        setTimeout(() => {
+                            wrapper.classList.remove('wrapper--trackInfosHidden');
+                            wrapper.classList.add('wrapper--changeTrackHidden');
+                            wrapper.classList.add('wrapper--changeTrackMove');              
+                            wrapper.classList.add('wrapper--playerVisible');
+                            wrapper.classList.remove('wrapper--trackInfos');                            
+                            trackInfos.classList.add('track__infos--move');
+                            player.classList.add('player--active');                            
+                            playerInfos.classList.add('player__infos--hidden');
+                            playerCover.classList.add('player__cover--active');
+                            mobileNextBtn.classList.add('changeTrack__btn--move');
+                        }, 100);
+                    }
+                    if(wrapper.classList.contains('wrapper--changeTrackMove')){
+                        mobileNextBtn.classList.add('changeTrack__btn--visible');
+                        setTimeout(() => {
+                            wrapper.classList.remove('wrapper--changeTrackHidden');
+                            wrapper.classList.add('wrapper--changeTrackVisible');
+                        }, 100);
+                    }
+                }
+                if(touchStart < touchEnd){
+                    if(wrapper.classList.contains('wrapper--trackInfosHidden')){
+                        
+                    }
+                    if(wrapper.classList.contains('wrapper--trackInfos')){
+                        trackInfos.classList.remove('track__infos--visible');
+                        trackInfos.classList.remove('track__infos--move');
+                        player.classList.remove('player--active');
+                        playerInfos.classList.remove('player__infos--hidden');
+                        playerCover.classList.remove('player__cover--active');
+                        setTimeout(() => {
+                            wrapper.classList.remove('wrapper--playerVisible');
+                            wrapper.classList.add('wrapper--trackInfosHidden');
+                        }, 100);
+                    }
+                    if(wrapper.classList.contains('wrapper--playerHidden')){
+                        setTimeout(() => {                                              
+                            wrapper.classList.add('wrapper--trackInfos');
+                        }, 1000);
+                    }
+                    if(wrapper.classList.contains('wrapper--changeTrackHidden')){
+                        wrapper.classList.remove('wrapper--changeTrackMove');
+                        trackInfos.classList.remove('track__infos--visible');                        
+                        player.classList.remove('player--hidden');
+                        player.classList.add('player--disactive');
+                        mobileNextBtn.classList.remove('changeTrack__btn--move');
+                        setTimeout(() => {
+                            wrapper.classList.add('wrapper--playerHidden');
+                        }, 100);
+                    }
+                    if(wrapper.classList.contains('wrapper--changeTrackVisible')){
+                        mobileNextBtn.classList.remove('changeTrack__btn--visible');
+                        setTimeout(() => {
+                            wrapper.classList.add('wrapper--changeTrackHidden');
+                        }, 100);
+                    }
+                }
+            }); -->
+        </script>
         <!-- endbuild -->
     </body>
 </html>

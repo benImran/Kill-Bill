@@ -1,0 +1,114 @@
+.changeTrack {
+  display: flex;
+  position: fixed;
+  bottom: -25vh;
+  height: 25vh;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100vw;
+  transition-property: bottom;
+  transition-duration: .6s;
+
+  .previous-track {
+    display: none;
+
+    @include breakpoint(ipad-large) {
+      display: flex;
+    }
+  }
+
+  .next-track {
+    width: 100%;
+
+    @include breakpoint(ipad-large) {
+      width: 50%;
+    }
+  }
+
+  @include breakpoint(ipad-large) {
+    height: 20vh;
+    bottom: -20vh;
+  }
+}
+
+.changeTrack__btn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100vw;
+  height: auto;
+  padding: 35px 32px;
+  background-color: $yellow-style;
+  text-align: left;
+  align-items: center;
+  transition-property: bottom;
+  transition-duration: .6s;
+  cursor: pointer;
+
+  @include breakpoint(ipad-large) {
+    width: 50%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include breakpoint(small-desk) {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
+}
+
+.changeTrack__btn--move {
+  position: fixed;
+  bottom: -24vh;
+
+  @include breakpoint(ipad-large) {
+    bottom: -19vh;
+  }
+}
+
+.changeTrack__btn--visible {
+  position: fixed;
+  bottom: -1px;
+}
+
+.changeTrack__btn--desktop {
+  display: none;
+
+  @include breakpoint(ipad-large) {
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include breakpoint(small-desk) {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
+
+}
+
+.changeTrack__btn--blackReversed {
+  flex-direction: row-reverse;
+  background-color: $black-style;
+}
+
+.changeTrack__btn:not(.changeTrack__btn--blackReversed) {
+
+  @include breakpoint(ipad-large) {
+
+    .btnInfos:nth-child(2) {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      padding-left: 20px;
+
+      .btnInfos__rank {
+        padding-right: 68px;
+      }
+
+      .btnInfos__arrow--desktop {
+        padding: 0;
+      }
+    }
+  }
+}
