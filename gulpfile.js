@@ -22,7 +22,7 @@ let isProd = process.env.NODE_ENV === 'production';
  * SCSS
  */
 function scss() {
-    return gulp.src('app/scss/style.scss')
+    return gulp.src('app/scss/**/*.scss')
         .pipe(gulpif(!isProd, sourcemaps.init()))
         .pipe(sass())
         .pipe(gulpif(isProd, minifyCSS()))
@@ -31,6 +31,11 @@ function scss() {
         .pipe(sync.stream());
 }
 
+function css() {
+    gulp.src('dist/**/*.css')
+        .pipe(pxtorem())
+        .pipe(gulp.dest('dist/css/'));
+}
 
 function html() {
     return gulp.src('app/**/*.html')
@@ -82,9 +87,9 @@ function clean() {
 
 
 // TODO: ADD GULP JS TO PARALLEL
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, images, fonts, js)));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, css, images, fonts, js)));
 
-gulp.task('default', gulp.parallel(html, scss, images, fonts, js, function(done) {
+gulp.task('default', gulp.parallel(html, scss, css, images, fonts, js, function(done) {
     sync.init({
         server: {
             baseDir: './dist'
