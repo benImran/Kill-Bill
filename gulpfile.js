@@ -94,7 +94,7 @@ function clean() {
 // TODO: ADD GULP JS TO PARALLEL
 gulp.task('build', gulp.series(clean, gulp.parallel(html, music, scss, images, fonts, js)));
 
-gulp.task('default', gulp.parallel(html, scss, music images, fonts, js, function(done) {
+gulp.task('default', gulp.parallel(html, scss, music, images, fonts, js, function(done) {
     sync.init({
         server: {
             baseDir: './dist'
