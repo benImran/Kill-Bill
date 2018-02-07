@@ -6,7 +6,8 @@
     <title>Kill bill</title>
     <meta name="description" content="">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-
+    
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <!--build:css css/style.css-->
     <link rel="stylesheet" href="css/style.css">
     <!--endbuild-->
@@ -17,7 +18,7 @@
             <nav class="nav">
                 <ul class="nav__list">
                     <li><a href="index.html">home</a></li>
-                    <li><a href="tracklist.html">index</a></li>
+                    <li class="nav__index"><a href="#">index</a></li>
                 </ul>
                 <div class="nav__burger"></div>
             </nav>
@@ -51,13 +52,19 @@
                             <p class="player__rankTotal">12</p>
                         </div>
                     </div>
-                    <div class="player__cover">
-                        <img src="img/pochette.png" class="player__coverAlbum" alt="album cover">
+                    <div class="player__killbill">
+                        <img src="img/kill.png" alt="kill">
+                        <img src="img/bill.png" alt="">
+                    </div>
+                    <div class="player-containerCover">
+                        <div class="player__cover">
+                            <img src="img/vinyle-1.png" class="player__coverAlbum" alt="album cover">
+                        </div>
                     </div>
 
                 </div>
                 <div class="track__infos">
-                    <h3 class="track__infosTitle">A propos de ce morceau</h3>
+                    <h3 class="track__infosTitle"><span>A propos de ce morceau</span><img class="track__play track__play--pause" src="img/pause.svg" alt="button"></h3>
                     <p class="track__infosText">Tarantino est un vrai fan de musique, 
                         et il le prouve encore avec la bande originale de Kill Bill. 
                         Perverse et malicieuse, elle sublime les instants magiques 
@@ -69,14 +76,15 @@
                     </p>
                 </div>
             </div>
+            <audio src="music/Bang bang My Baby shut me down.mp3" class="trackPlayer"></audio>
             <div class="changeTrack">
                 <div class="changeTrack__btn changeTrack__btn--desktop changeTrack__prev changeTrack__btn--blackReversed">
                     <div class="btnInfos">
-                        <p class="btnInfos__trackTitle btnInfos__trackTitle--white">That Certain Female</p>
-                        <p class="btnInfos__trackArtist btnInfos__trackArtist--firstBlock">Charlie Feathers</p>
+                        <p class="btnInfos__trackTitle btnInfos__trackTitle--white btnInfos__trackTitle--prev">That Certain Female</p>
+                        <p class="btnInfos__trackArtist btnInfos__trackArtist--firstBlock btnInfos__trackArtist--prev">Charlie Feathers</p>
                     </div>
                     <div class="btnInfos">
-                        <p class="btnInfos__rank btnInfos__rank--yellow">02</p>
+                        <p class="btnInfos__rank btnInfos__rank--yellow">12</p>
                         <div class="btnInfos__arrow btnInfos__arrow--desktop btnInfos__arrow--white">
                             <svg width="17px" height="28px" viewBox="0 0 17 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="Desktop-HD-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-68.000000, -1265.000000)">
@@ -94,8 +102,8 @@
                 </div>
                 <div class="changeTrack__btn changeTrack__btn--mobile changeTrack__next">
                     <div class="btnInfos">
-                        <p class="btnInfos__trackTitle">Bang Bang - My baby shot me down</p>
-                        <p class="btnInfos__trackArtist">Charlie Feathers</p>
+                        <p class="btnInfos__trackTitle btnInfos__trackTitle--next">That certain female</p>
+                        <p class="btnInfos__trackArtist btnInfos__trackArtist--next">Charlie Feathers</p>
                     </div>
                     <div class="btnInfos">
                         <p class="btnInfos__rank btnInfos__rank--white">02</p>
@@ -124,156 +132,12 @@
                 </div>
             </div>
         </div>
-        <div class="trackList"></div>
+        </main>
+        <div class="tracklist-page">
+            <div class="tracklist"></div>
+        </div>
         <!--build:js js/main.min.js -->
         <script src="./js/main.js"></script>
-        <!-- <script>
-            const wrapper = document.querySelector('.wrapper');
-            const body = document.querySelector('body');
-            const nav = document.querySelector('.nav');
-            const burger = document.querySelector('.nav__burger');
-            const list = document.querySelector('.nav__list');
-            const homeScroller = document.querySelector('.homepage__scroller');
-            const bar = document.querySelector('.nav__burger');
-            const movingBlock = document.querySelector('.movingBlock');
-            const cover = document.querySelector('.overview__albumCover');
-            const vinyle = document.querySelector('.overview__albumVinyle');
-            const player = document.querySelector('.player');
-            const playerInfos = document.querySelector('.player__infos');
-            const playerCover = document.querySelector('.player__cover');
-            const trackInfos = document.querySelector('.track__infos');
-            const mobileNextBtn = document.querySelector('.changeTrack');
-            const prevTrack = document.querySelector('.changeTrack__prev');
-            const nextTrack = document.querySelector('.changeTrack__next');
-            let touchStart = 0;
-
-            burger.addEventListener('click', () => {
-                bar.classList.toggle('nav__burger--active');
-                list.classList.toggle('nav__list--active');
-                nav.classList.toggle('nav--active');
-            });
-
-            wrapper.addEventListener('touchstart', (evt) => {
-                touchStart = evt.touches[0].clientY;
-            });
-
-            body.addEventListener('click', () => {
-                "use strict";
-                // var require = function (_require) { 
-                //     console.log(JSON.parse('./js/content-page.json'));
-                //     JSON.parse('./js/content-page.json');
-                // };
-                // json = JSON.parse(fs.readFileSync('./js/content-page.json'));
-                // console.log(json);
-                fetch('./content-page.json')
-                    .then(console.log)
-                    .then(console.log)
-            });
-
-            nextTrack.addEventListener('click', () => {
-                console.log('yee');
-            });
-            
-            body.addEventListener('touchend', (evt) => {
-                const touchEnd = evt.changedTouches[0].clientY;
-                if(touchStart > touchEnd){
-                    if(wrapper.classList.contains('wrapper--homepage')){
-                        burger.classList.add('nav__burger--visible');
-                        homeScroller.classList.add('homepage__scroller--hidden');
-                        cover.classList.add('overview__albumCover--move');
-                        vinyle.classList.add('overview__albumVinyle--move');
-                        movingBlock.classList.add('movingBlock--move');
-                        setTimeout(() => {
-                            wrapper.classList.add('wrapper--trackInfosVisible');
-                            wrapper.classList.add('wrapper--trackInfosHidden');
-                            movingBlock.classList.add('movingBlock--fixed');
-                        }, 1200);
-                    }
-
-                    if(wrapper.classList.contains('wrapper--trackInfosVisible')){
-                        console.log('uyt');
-                        wrapper.classList.add('wrapper--playerHidden');
-                        movingBlock.classList.add('movingBlock--hidden');
-                        trackInfos.classList.add('track__infos--move');                        
-                        playerInfos.classList.add('player__infos--hidden');
-                        playerCover.classList.add('player__cover--active');
-                        setTimeout(() => {
-                            wrapper.classList.remove('wrapper--trackInfosHidden');
-                            wrapper.classList.add('wrapper--trackInfosVisible');
-                            wrapper.classList.add('wrapper--playerVisible');              
-                            burger.classList.add('nav__burger--visible');
-                            homeScroller.classList.add('homepage__scroller--hidden');
-                            player.classList.add('player--active');
-                            cover.classList.add('overview__albumCover--move');
-                            vinyle.classList.add('overview__albumVinyle--move');
-                            movingBlock.classList.add('movingBlock--move');
-                            movingBlock.classList.add('movingBlock--fixed');
-                        }, 100);
-                    }
-                    if(wrapper.classList.contains('wrapper--playerVisible')){
-                        wrapper.classList.remove('wrapper--changeTrackHidden');                        
-                        trackInfos.classList.add('track__infos--visible');
-                        player.classList.add('player--hidden');
-                        setTimeout(() => {
-                            wrapper.classList.remove('wrapper--trackInfosHidden');
-                            wrapper.classList.add('wrapper--changeTrackHidden');
-                            wrapper.classList.add('wrapper--changeTrackMove');              
-                            wrapper.classList.add('wrapper--playerVisible');
-                            wrapper.classList.remove('wrapper--trackInfos');                            
-                            trackInfos.classList.add('track__infos--move');
-                            player.classList.add('player--active');                            
-                            playerInfos.classList.add('player__infos--hidden');
-                            playerCover.classList.add('player__cover--active');
-                            mobileNextBtn.classList.add('changeTrack__btn--move');
-                        }, 100);
-                    }
-                    if(wrapper.classList.contains('wrapper--changeTrackMove')){
-                        mobileNextBtn.classList.add('changeTrack__btn--visible');
-                        setTimeout(() => {
-                            wrapper.classList.remove('wrapper--changeTrackHidden');
-                            wrapper.classList.add('wrapper--changeTrackVisible');
-                        }, 100);
-                    }
-                }
-                if(touchStart < touchEnd){
-                    if(wrapper.classList.contains('wrapper--trackInfosHidden')){
-                        
-                    }
-                    if(wrapper.classList.contains('wrapper--trackInfos')){
-                        trackInfos.classList.remove('track__infos--visible');
-                        trackInfos.classList.remove('track__infos--move');
-                        player.classList.remove('player--active');
-                        playerInfos.classList.remove('player__infos--hidden');
-                        playerCover.classList.remove('player__cover--active');
-                        setTimeout(() => {
-                            wrapper.classList.remove('wrapper--playerVisible');
-                            wrapper.classList.add('wrapper--trackInfosHidden');
-                        }, 100);
-                    }
-                    if(wrapper.classList.contains('wrapper--playerHidden')){
-                        setTimeout(() => {                                              
-                            wrapper.classList.add('wrapper--trackInfos');
-                        }, 1000);
-                    }
-                    if(wrapper.classList.contains('wrapper--changeTrackHidden')){
-                        wrapper.classList.remove('wrapper--changeTrackMove');
-                        trackInfos.classList.remove('track__infos--visible');                        
-                        player.classList.remove('player--hidden');
-                        player.classList.add('player--disactive');
-                        mobileNextBtn.classList.remove('changeTrack__btn--move');
-                        setTimeout(() => {
-                            wrapper.classList.add('wrapper--playerHidden');
-                        }, 100);
-                    }
-                    if(wrapper.classList.contains('wrapper--changeTrackVisible')){
-                        mobileNextBtn.classList.remove('changeTrack__btn--visible');
-                        setTimeout(() => {
-                            wrapper.classList.add('wrapper--changeTrackHidden');
-                        }, 100);
-                    }
-                }
-            }); -->
-        </script>
         <!-- endbuild -->
     </body>
 </html>

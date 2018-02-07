@@ -260,9 +260,7 @@ a {
 .tracklist-page {
   background-color: #0C101C;
   font-family: "Barlow Condensed", sans-serif;
-  text-align: center;
-  height: auto;
-  position: relative; }
+  text-align: center; }
   .tracklist-page .tracklist {
     padding: 85px 40px 85px;
     display: flex;
@@ -328,12 +326,13 @@ a {
       .tracklist-page .arrow-up {
         display: none; } }
 
-.track-page {
-  background-color: #0C101C;
-  font-family: "Barlow Condensed", sans-serif;
-  text-align: center;
-  height: auto;
-  position: relative; }
+.tracklist-page--active {
+  height: 200vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 10000;
+  overflow: hidden; }
 
 .homepage {
   position: relative;
@@ -634,6 +633,14 @@ a {
     height: 3px;
     background-color: #FFD600; }
 
+.track__play {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer; }
+
 .track__infosText {
   margin-top: 24px;
   color: #FFF;
@@ -713,6 +720,30 @@ a {
     height: 30px;
     border-left: 1.5px solid #FFF; }
 
+.player__killbill {
+  display: none; }
+  @media (min-width: 800px) {
+    .player__killbill {
+      display: flex;
+      transform: translateY(-30vh);
+      position: absolute;
+      left: -100vw;
+      right: 0;
+      width: 300vw;
+      justify-content: space-between;
+      transition-property: width, left;
+      transition-duration: 1.4s, 1.4s;
+      transition-delay: .3s, .3s; } }
+
+.player__killbill--visible {
+  display: none; }
+  @media (min-width: 800px) {
+    .player__killbill--visible {
+      display: flex;
+      position: absolute;
+      width: 100vw;
+      left: 0; } }
+
 .player__cover {
   z-index: 9;
   position: relative;
@@ -734,7 +765,7 @@ a {
     background: #FFC100;
     z-index: 99;
     transition-property: width;
-    transition-duration: .5s;
+    transition-duration: 0s;
     transition-delay: 0s; }
   .player__cover::after {
     content: "";
@@ -960,27 +991,5 @@ a {
     .btnInfos__arrow--desktop {
       display: block;
       padding-right: 68px; } }
-
-.burger {
-  display: none;
-  visibility: collapse;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-  width: 100vw;
-  height: 100vh;
-  background-color: #FFC100;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  font-family: "Barlow Condensed SemiBold";
-  font-size: 32px;
-  text-transform: uppercase; }
-  .burger li:first-child {
-    margin-bottom: 42px; }
 
 /*# sourceMappingURL=style.css.map */
