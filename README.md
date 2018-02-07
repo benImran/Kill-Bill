@@ -13,11 +13,10 @@ Puis on install gulp :
 
 npm install gulp --D
 
-Et pour lancer le projet en ligne grace à netlify il faut utiliser cette ligne :
+Et pour déployer le projet en ligne grace à netlify il faut utiliser cette ligne :
 
 npm run build
 
 
 Link : https://vinyl-killbill.netlify.com/
 
-Deployed : gulp build
