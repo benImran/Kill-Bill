@@ -1,10 +1,8 @@
-//tracklist
 .tracklist-page {
   background-color: $dark-blue;
   font-family: $Barlow-cond;
   text-align: center;
-  height: auto;
-  position: relative;
+  // height: auto;
 
   .tracklist {
     padding: 85px 40px 85px;
@@ -99,10 +97,11 @@
 }
 
 //track
-.track-page {
-  background-color: $dark-blue;
-  font-family: $Barlow-cond;
-  text-align: center;
-  height: auto;
-  position: relative;
+.tracklist-page--active {
+  height: 200vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 10000;
+  overflow: hidden;
 }
