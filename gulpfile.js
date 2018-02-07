@@ -31,12 +31,6 @@ function scss() {
         .pipe(sync.stream());
 }
 
-function css() {
-    gulp.src('dist/**/*.css')
-        .pipe(pxtorem())
-        .pipe(gulp.dest('dist/css/'));
-}
-
 function html() {
     return gulp.src('app/**/*.html')
         .pipe(gulp.dest('dist/'))
@@ -87,9 +81,9 @@ function clean() {
 
 
 // TODO: ADD GULP JS TO PARALLEL
-gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, css, images, fonts, js)));
+gulp.task('build', gulp.series(clean, gulp.parallel(html, scss, images, fonts, js)));
 
-gulp.task('default', gulp.parallel(html, scss, css, images, fonts, js, function(done) {
+gulp.task('default', gulp.parallel(html, scss, images, fonts, js, function(done) {
     sync.init({
         server: {
             baseDir: './dist'
