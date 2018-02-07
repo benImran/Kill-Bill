@@ -170,7 +170,7 @@ body.addEventListener('touchend', (evt) => {
 });
 
 function resetPage() {
-    trackPlayer.pause();
+    // trackPlayer.pause();
     trackPlay.src = 'img/pause.svg';
     trackPlay.classList.add('track__play--pause');
     trackInfos.classList.remove('track__infos--visible');
@@ -219,7 +219,7 @@ function moveDown(){
     }
 
     if (wrapper.classList.contains('wrapper--trackInfosVisible')) {
-        trackPlayer.play();
+        // trackPlayer.play();
         wrapper.classList.add('wrapper--playerHidden');
         movingBlock.classList.add('movingBlock--hidden');
         trackInfos.classList.add('track__infos--move');
