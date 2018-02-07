@@ -1,41 +1,41 @@
-const wrapper = document.querySelector('.wrapper');
-const body = document.querySelector('body');
-const nav = document.querySelector('.nav');
-const burger = document.querySelector('.nav__burger');
-const list = document.querySelector('.nav__list');
-const homeScroller = document.querySelector('.homepage__scroller');
-const bar = document.querySelector('.nav__burger');
-const movingBlock = document.querySelector('.movingBlock');
-const cover = document.querySelector('.overview__albumCover');
-const vinyle = document.querySelector('.overview__albumVinyle');
-const player = document.querySelector('.player');
-const playerInfos = document.querySelector('.player__infos');
-const playerCover = document.querySelector('.player__cover');
-const playerKillBill = document.querySelector('.player__killbill');
-const trackCoverAlbum = document.querySelector('.player__coverAlbum');
-const trackInfos = document.querySelector('.track__infos');
-const mobileNextBtn = document.querySelector('.changeTrack');
-const trackPlay = document.querySelector('.track__play');
-const prevTrack = document.querySelector('.changeTrack__prev');
-const nextTrack = document.querySelector('.changeTrack__next');
-const trackPlayer = document.querySelector('.trackPlayer');
-const trackListPage = document.querySelector('.tracklist-page');
-const tracklist = document.querySelector('.tracklist');
-const indexList = document.querySelector('.nav__index');
-const trackTitle = document.querySelector('.player__title');
-const trackArtist = document.querySelector('.player__artist');
-const trackRank = document.querySelector('.player__rankPosition');
-const trackText = document.querySelector('.track__infosText');
-const prevBtnRank = document.querySelector('.btnInfos__rank--yellow');
-const nextBtnRank = document.querySelector('.btnInfos__rank--white');
-const prevTrackTitle = document.querySelector('.btnInfos__trackTitle--prev');
-const nextTrackTitle = document.querySelector('.btnInfos__trackTitle--next');
-const prevTrackArtist = document.querySelector('.btnInfos__trackArtist--prev');
-const nextTrackArtist = document.querySelector('.btnInfos__trackArtist--next');
+const wrapper = document.querySelector('.wrapper'),
+    body = document.querySelector('body'),
+    nav = document.querySelector('.nav'),
+    burger = document.querySelector('.nav__burger'),
+    list = document.querySelector('.nav__list'),
+    homeScroller = document.querySelector('.homepage__scroller'),
+    bar = document.querySelector('.nav__burger'),
+    movingBlock = document.querySelector('.movingBlock'),
+    cover = document.querySelector('.overview__albumCover'),
+    vinyle = document.querySelector('.overview__albumVinyle'),
+    player = document.querySelector('.player'),
+    playerInfos = document.querySelector('.player__infos'),
+    playerCover = document.querySelector('.player__cover'),
+    playerKillBill = document.querySelector('.player__killbill'),
+    trackCoverAlbum = document.querySelector('.player__coverAlbum'),
+    trackInfos = document.querySelector('.track__infos'),
+    mobileNextBtn = document.querySelector('.changeTrack'),
+    trackPlay = document.querySelector('.track__play'),
+    prevTrack = document.querySelector('.changeTrack__prev'),
+    nextTrack = document.querySelector('.changeTrack__next'),
+    trackPlayer = document.querySelector('.trackPlayer'),
+    trackListPage = document.querySelector('.tracklist-page'),
+    tracklist = document.querySelector('.tracklist'),
+    indexList = document.querySelector('.nav__index'),
+    trackTitle = document.querySelector('.player__title'),
+    trackArtist = document.querySelector('.player__artist'),
+    trackRank = document.querySelector('.player__rankPosition'),
+    trackText = document.querySelector('.track__infosText'),
+    prevBtnRank = document.querySelector('.btnInfos__rank--yellow'),
+    nextBtnRank = document.querySelector('.btnInfos__rank--white'),
+    prevTrackTitle = document.querySelector('.btnInfos__trackTitle--prev'),
+    nextTrackTitle = document.querySelector('.btnInfos__trackTitle--next'),
+    prevTrackArtist = document.querySelector('.btnInfos__trackArtist--prev'),
+    nextTrackArtist = document.querySelector('.btnInfos__trackArtist--next');
 
-let touchStart = 0;
-let allow = true;
-let indic = 11;
+let touchStart = 0,
+    allow = true,
+    indic = 11;
 
 burger.addEventListener('click', () => {
     bar.classList.toggle('nav__burger--active');
@@ -70,11 +70,11 @@ indexList.addEventListener('click', () => {
     const tracks = JSON.parse(contentPage).tracks;
     if(!indexList.classList.contains('tracklist--create')){
         tracks.map(({titre, artiste, rank}) => {
-            const track = document.createElement('div');
-            const trackLink = document.createElement('a');
-            const trackTitle = document.createElement('h2');
-            const trackArtist = document.createElement('p');
-            const trackRank = document.createElement('p');
+            const track = document.createElement('div'),
+                trackLink = document.createElement('a'),
+                trackTitle = document.createElement('h2'),
+                trackArtist = document.createElement('p'),
+                trackRank = document.createElement('p');
 
             track.classList.add('track-item');
             tracklist.appendChild(track);
@@ -94,6 +94,8 @@ indexList.addEventListener('click', () => {
     }
     trackListPage.classList.add('tracklist-page--active');
 });
+
+
 
 trackListPage.addEventListener('click', () => {
     trackListPage.classList.remove('tracklist-page--active');
