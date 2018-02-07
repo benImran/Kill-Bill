@@ -1,22 +1,14 @@
-Introduction du projet Kill-Bill : 
-Pour récuperer le projet il faut faire un clone :
+# Setup
+1. git clone the repository https://github.com/benImran/hetic-w2-p2019-13.git
+2. cd hetic-w2-p2019-13
+3. npm install
+4. npm install gulpjs/gulp.git#4.0 --D
+5. gulp --> default task (starts a server using browsersync) and watches for changes in sass & js
 
-git clone https://github.com/benImran/hetic-w2-p2019-13.git ProjectName
+# Netlify Setup
+Command line to set up Netlify
+* npm run build
 
-Il faut au préalable installer npm ou yarn pour continuer.
+#### The master branch is synchronized automatically with the netlify server
 
-Ensuite on installe les dépendances en utilisant cette ligne de commande : 
-
-npm install 
-
-Puis on install gulp :
-
-npm install gulp --D
-
-Et pour déployer le projet en ligne grace à netlify il faut utiliser cette ligne :
-
-npm run build
-
-
-Link : https://vinyl-killbill.netlify.com/
-
+## Link : https://vinyl-killbill.netlify.com/
