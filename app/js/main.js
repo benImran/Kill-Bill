@@ -149,8 +149,8 @@ nextTrack.addEventListener('click', () => {
             trackText.innerHTML = track.description;
             trackCoverAlbum.src = `img/vinyle-${key + 1}.png`;
             trackPlayer.src = `music/${track.titre}.mp3`;
-            nextTrackTitle.innerHTML = indic < 10 ? tracks[indic + 2].titre : tracks[0].titre;
-            nextTrackArtist.innerHTML = indic < 10 ? tracks[indic + 2].artiste : tracks[0].artiste;
+            nextTrackTitle.innerHTML = indic < 10 ? tracks[indic + 2].titre : tracks[tracks.length].titre;
+            nextTrackArtist.innerHTML = indic < 10 ? tracks[indic + 2].artiste : tracks[tracks.length].artiste;
             nextBtnRank.innerHTML = indic < 10 ? tracks[indic + 2].rank : tracks[0].rank;
             nextBtnRank.innerHTML = indic < 10 ? tracks[indic + 2].rank : tracks[0].rank;
             prevTrackArtist.innerHTML = tracks[indic].artiste;
@@ -170,7 +170,6 @@ body.addEventListener('touchend', (evt) => {
 });
 
 function resetPage() {
-    // trackPlayer.pause();
     trackPlay.src = 'img/pause.svg';
     trackPlay.classList.add('track__play--pause');
     trackInfos.classList.remove('track__infos--visible');
@@ -192,7 +191,7 @@ function resetPage() {
     mobileNextBtn.classList.remove('changeTrack__btn--move');
     setTimeout(() => {
         wrapper.classList.add('wrapper--playerHidden');
-        playerKillBill.classList.add('player__killbill--visible');
+        playerKillBill.classList.remove('player__killbill--visible');
         mobileNextBtn.classList.remove('changeTrack__btn--visible');
     }, 100);
     setTimeout(() => {
@@ -219,7 +218,6 @@ function moveDown(){
     }
 
     if (wrapper.classList.contains('wrapper--trackInfosVisible')) {
-        // trackPlayer.play();
         wrapper.classList.add('wrapper--playerHidden');
         movingBlock.classList.add('movingBlock--hidden');
         trackInfos.classList.add('track__infos--move');
@@ -382,7 +380,7 @@ const contentPage = `{
             "rank": "11"
         },
         {
-			"titre": "The flowers of carnage ",
+			"titre": "The flowers of carnage",
 			"artiste": "Meiko Kaji",
             "image": "nom/chemin de l'image",
             "description" : "Après avoir combattu longtemps avec son ennemi, Mamba Negra aura le dernier coup face à son adversaire Oren, d’un coup de sabre elle décape le haut de son crâne qui vol alors dans les airs. L’héroïne s’assoit sur un banc apaisée par sa vengeance. Elle peut ainsi rayer de sa liste à abattre le nom de Oren Ishii et s’intéresser aux prochains de la liste…",

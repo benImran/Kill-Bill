@@ -13,6 +13,8 @@
       display: block;
       column-count: 2;
       column-gap: 150px;
+      padding-left: 15%;
+      padding-right: 15%;
       padding-top: 125px;
       padding-bottom: 170px;
     }
@@ -35,10 +37,9 @@
       }
     }
 
-
-
     @include breakpoint(ipad-large) {
       margin-bottom: 80px;
+      max-width: 400px;
     }
 
     &:last-child {
@@ -98,10 +99,10 @@
 
 //track
 .tracklist-page--active {
-  height: 200vh;
+  height: 100vh;
   position: absolute;
   top: 0;
   width: 100vw;
-  z-index: 10000;
-  overflow: hidden;
+  z-index: 1000;
+  overflow: scroll;
 }

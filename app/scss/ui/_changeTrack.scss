@@ -59,10 +59,10 @@
 
 .changeTrack__btn--move {
   position: fixed;
-  bottom: -24vh;
+  bottom: 0vh;
 
   @include breakpoint(ipad-large) {
-    bottom: -19vh;
+    bottom: 0vh;
   }
 }
 
