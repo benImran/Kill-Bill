@@ -1,14 +1,12 @@
-//Nav
-
 .nav {
-  position: fixed;
-  top: 25px;
-  right: 20px;
-	z-index: 4;
+	position: fixed;
+	top: 25px;
+	right: 20px;
+	z-index: 20000;
 	width: 10%;
 	height: 5%;
 	transition: 3s;
-	
+
 	&::before {
 		content: "";
 		display: block;
@@ -39,11 +37,11 @@
 	display: none;
 	position: relative;
 	right: 90px;
-  	
+
 	a {
-    margin-right: 60px;
+		margin-right: 60px;
 		font-size: 20px;
-    color: $yellow-style;
+		color: $yellow-style;
 		font-family: $fontsemibold;
 		text-transform: uppercase;
 	}
@@ -104,7 +102,7 @@
 	}
 
 	@include breakpoint(ipad-large) {
-			display: none;
+		display: none;
 	}
 }
 
@@ -124,7 +122,7 @@
 
 	&::before {
 		transform: rotate(265deg);
-		top: 0px;
+		top: 0;
 		background-color: $dark-blue;
 	}
 }

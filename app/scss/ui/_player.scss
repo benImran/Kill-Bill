@@ -15,8 +15,8 @@
   transform: translateY(-60vh);
 
   @include breakpoint(ipad-large) {
-      transform: translateY(-40vh);
-    }
+    transform: translateY(-40vh);
+  }
 }
 
 .player__infos {
@@ -31,11 +31,11 @@
   @include breakpoint(iphone-8plus) {
     transform: translateY(-47vh);
   }
-  
+
   @include breakpoint(small-tab) {
     transform: translateY(-42vh);
   }
-  
+
   @include breakpoint(ipad-large) {
     transform: translateY(-38vh);
   }
@@ -86,6 +86,33 @@
   }
 }
 
+.player__killbill {
+  display: none;
+  @include breakpoint(ipad-large) {
+    display: flex;
+    transform: translateY(-30vh);
+    position: absolute;
+    left: -100vw;
+    right: 0;
+    width: 300vw;
+    justify-content: space-between;
+    transition-property: width, left;
+    transition-duration: 1.4s, 1.4s;
+    transition-delay: .3s, .3s;
+  }
+}
+
+.player__killbill--visible {
+  display: none;
+  @include breakpoint(ipad-large) {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    left: 0;
+  }
+
+}
+
 .player__cover {
   z-index: 9;
   position: relative;
@@ -108,10 +135,10 @@
     background: $yellow-style;
     z-index: 99;
     transition-property: width;
-    transition-duration: .5s;
+    transition-duration: 0s;
     transition-delay: 0s;
   }
- 
+
   &::after {
     content: "";
     display: block;
@@ -126,12 +153,12 @@
     width: 40vw;
     height: 40vw;
   }
-  
+
   @include breakpoint(small-tab) {
     width: 40vw;
     height: 40vw;
   }
-  
+
   @include breakpoint(ipad-large) {
     width: 25vw;
     height: 25vw;
@@ -166,7 +193,7 @@
       }
       100% {
         width: 0;
-      } 
+      }
     }
   }
 
@@ -175,11 +202,11 @@
     width: 40vw;
     height: 40vw;
   }
-  
+
   @include breakpoint(small-tab) {
     top: calc(-50vh + 20px);
   }
-  
+
   @include breakpoint(ipad-large) {
     top: -42vh;
     width: 25vw;
